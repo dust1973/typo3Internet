@@ -1,0 +1,83 @@
+
+<table class="tx-woehrl-gewinnspiele" >
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlgewinnspiele_domain_model_gewinnspiel.title" />
+		</td>
+		<td>
+		{gewinnspiel.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlgewinnspiele_domain_model_gewinnspiel.subtitle" />
+		</td>
+		<td>
+		{gewinnspiel.subtitle}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlgewinnspiele_domain_model_gewinnspiel.gewinnspieldatetimestart" />
+		</td>
+		<td>
+		{gewinnspiel.gewinnspieldatetimestart -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlgewinnspiele_domain_model_gewinnspiel.gewinnspieldatetimestop" />
+		</td>
+		<td>
+		{gewinnspiel.gewinnspieldatetimestop -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlgewinnspiele_domain_model_gewinnspiel.teasertext" />
+		</td>
+		<td>
+		{gewinnspiel.teasertext}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlgewinnspiele_domain_model_gewinnspiel.teilnahmebedingungen" />
+		</td>
+		<td>
+		{gewinnspiel.teilnahmebedingungen}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlgewinnspiele_domain_model_gewinnspiel.vorschaubild" />
+		</td>
+		<td>
+				<f:image src="{gewinnspiel.vorschaubild.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlgewinnspiele_domain_model_gewinnspiel.titlebild" />
+		</td>
+		<td>
+				<f:image src="{gewinnspiel.titlebild.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlgewinnspiele_domain_model_gewinnspiel.kassenbonn" />
+		</td>
+		<td>
+		{gewinnspiel.kassenbonn}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlgewinnspiele_domain_model_gewinnspiel.description" />
+		</td>
+		<td>
+		{gewinnspiel.description}
+		</td>
+	</tr>
+</table>

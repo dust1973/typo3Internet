@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-02-26T19:19:09Z" product-name="woehrl_gewinnspiele">
+		<header/>
+		<body>
+			<trans-unit id="gender.description">
+				<source>gender</source>
+			</trans-unit>
+			<trans-unit id="firstname.description">
+				<source>firstname</source>
+			</trans-unit>
+			<trans-unit id="lastname.description">
+				<source>lastname</source>
+			</trans-unit>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="phone.description">
+				<source>phone</source>
+			</trans-unit>
+			<trans-unit id="mobile.description">
+				<source>mobile</source>
+			</trans-unit>
+			<trans-unit id="zip.description">
+				<source>zip</source>
+			</trans-unit>
+			<trans-unit id="city.description">
+				<source>city</source>
+			</trans-unit>
+			<trans-unit id="address.description">
+				<source>address</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="werbung.description">
+				<source>werbung</source>
+			</trans-unit>
+			<trans-unit id="country.description">
+				<source>country</source>
+			</trans-unit>
+			<trans-unit id="filiale.description">
+				<source>filiale</source>
+			</trans-unit>
+			<trans-unit id="kasse.description">
+				<source>kasse</source>
+			</trans-unit>
+			<trans-unit id="bon.description">
+				<source>bon</source>
+			</trans-unit>
+			<trans-unit id="bondatum.description">
+				<source>bondatum</source>
+			</trans-unit>
+			<trans-unit id="gewinnspiel.description">
+				<source>gewinnspiel</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

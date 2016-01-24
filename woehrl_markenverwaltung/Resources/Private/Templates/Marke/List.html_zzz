@@ -1,0 +1,246 @@
+{namespace mar = Woehrl\WoehrlMarkenverwaltung\ViewHelpers}
+<f:layout name="Default"/>
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <div id="typo3-docbody">
+        <div id="typo3-inner-docbody">
+            <f:flashMessages renderMode="div" />
+            <f:render section="main" />
+        </div>
+    </div>
+
+
+    <f:if condition="{settings.markenverwaltung} == 1">
+        <f:then>
+
+            <div role="tabpanel" class="bs-example bs-example-tabs">
+                <ul role="tablist" class="nav nav-tabs" id="myTab">
+                    <f:if condition="{markes.herrenmarken}">
+                    <li  class="active" role="presentation">
+                        <a aria-controls="profile" data-toggle="tab" id="herrenmarken-tab" role="tab" href="#herrenmarken" aria-expanded="false">Herren-Marken</a>
+                    </li>
+                    </f:if>
+                    <f:if condition="{markes.herrenmarken}">
+                        <f:then>
+                    <li role="presentation" class="">
+                        <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="damenmarken-tab" href="#damenmarken">Damen-Marken</a>
+                    </li>
+                        </f:then>
+                        <f:else>
+                            <li role="presentation" class="active">
+                                <a aria-expanded="true" aria-controls="home" data-toggle="tab" role="tab" id="damenmarken-tab" href="#damenmarken">Damen-Marken</a>
+                            </li>
+                            </f:else>
+                        </f:if>
+                    <f:if condition="{markes.kindermarken}">
+                    <li role="presentation" class="">
+                        <a aria-controls="profile" data-toggle="tab" id="kindermarken-tab" role="tab" href="#kindermarken" aria-expanded="false">Kinder-Marken</a>
+                    </li>
+                    </f:if>
+                    <f:if condition="{markes.sportmarken}">
+                        <li role="presentation" class="">
+                            <a aria-controls="profile" data-toggle="tab" id="sportmarken-tab" role="tab" href="#sportmarken" aria-expanded="false">Sport-Marken</a>
+                        </li>
+                    </f:if>
+                    <f:if condition="{markes.ueinsmarken}">
+                    <li role="presentation" class=""><a aria-controls="profile" data-toggle="tab" id="ueinsmarken-tab" role="tab" href="#ueinsmarken" aria-expanded="false">u-eins Fashion</a>
+                    </li>
+                        </f:if>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+            <f:for each="{markes}" as="marken" key="category" iteration="catIteration">
+                <f:if condition="{marken}">
+
+                <f:if condition="{catIteration.isFirst}">
+                    <f:then>
+                        <div aria-labelledby="{category}-tab" id="{category}" class="tab-pane fade active in"
+                             role="tabpanel">
+                    </f:then>
+                    <f:else>
+                        <div aria-labelledby="{category}-tab" id="{category}" class="tab-pane fade" role="tabpanel">
+                    </f:else>
+                </f:if>
+
+                <f:for each="{marken}" as="marke" key="anfangsbuchstabe" iteration="itemIteration">
+
+                    <f:for each="{marke}" as="mark" iteration="markIteration">
+                        <mar:zeigeMarken marke="{mark.marke}" iteration="{markIteration.cycle}"
+                                         anzahl="{markIteration.total}" anfangsbuchstabe="{anfangsbuchstabe}"/>
+                    </f:for>
+
+
+                </f:for>
+
+                </div>
+                </f:if>
+            </f:for>
+            </div>
+            </div>
+        </f:then>
+        <f:else>
+
+            <f:if condition="{settings.category}">
+                <f:then>
+                    <div class="row" id="marken">
+                        <div class="col-lg-12">
+                            <nav class="marken">
+                                <ul>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenA">A</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenB">B</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenC">C</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenD">D</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenE">E</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenF">F</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenG">G</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenH">H</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenI">I</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenJ">J</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenK">K</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenL">L</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenM">M</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenN">N</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenO">O</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenP">P</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenQ">Q</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenR">R</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenS">S</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenT">T</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenU">U</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenV">V</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenW">W</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenX">X</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenY">Y</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="markenZ">Z</f:link.page>
+                                    </li>
+                                    <li>
+                                        <f:link.page addQueryString="1" section="marken0-9">0-9</f:link.page>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                    <hr/>
+                    <f:for each="{markes}" as="marke" key="anfangsbuchstabe" iteration="itemIteration">
+
+                        <f:for each="{marke}" as="mark" iteration="markIteration">
+                            <mar:zeigeMarken marke="{mark.marke}" iteration="{markIteration.cycle}"
+                                             anzahl="{markIteration.total}" anfangsbuchstabe="{anfangsbuchstabe}"/>
+                        </f:for>
+
+
+                    </f:for>
+                </f:then>
+                <f:else>
+                    <f:render partial="List/ModeHaus"/>
+
+                    <f:for each="{markes}" as="marken" key="category" iteration="catIteration">
+
+
+                        <f:if condition="{catIteration.isFirst}">
+                            <f:then>
+                                <div aria-labelledby="{category}-tab" id="{category}" class="tab-pane fade active in"
+                                     role="tabpanel">
+                            </f:then>
+                            <f:else>
+                                <div aria-labelledby="{category}-tab" id="{category}" class="tab-pane fade"
+                                     role="tabpanel">
+                            </f:else>
+                        </f:if>
+
+                        <f:for each="{marken}" as="marke" key="anfangsbuchstabe" iteration="itemIteration">
+
+                            <f:for each="{marke}" as="mark" iteration="markIteration">
+                                <mar:zeigeMarken marke="{mark.marke}" iteration="{markIteration.cycle}"
+                                                 anzahl="{markIteration.total}" anfangsbuchstabe="{anfangsbuchstabe}"/>
+                            </f:for>
+
+
+                        </f:for>
+
+                        </div>
+                    </f:for>
+                    </div>
+                    </div>
+                </f:else>
+            </f:if>
+
+        </f:else>
+    </f:if>
+    <script>
+
+
+        $("body").popover({
+            selector: '[data-toggle=popover]',
+            html: true,
+            animation: true,
+            placement: 'top',
+            trigger: 'focus',
+        });
+
+
+    </script>
+
+</f:section>

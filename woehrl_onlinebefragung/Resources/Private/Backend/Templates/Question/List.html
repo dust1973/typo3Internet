@@ -1,0 +1,69 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Question</h1>
+
+<f:flashMessages />
+
+<table  class="tx_woehrlonlinebefragung" >
+	<tr>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.title" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.typ" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.answer1" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.nextquestion1" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.correct1" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.answer2" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.nextquestion2" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.correct2" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.answer3" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.nextquestion3" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.correct3" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.answer4" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.nextquestion4" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.correct4" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.answer5" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.nextquestion5" /></th>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_question.correct5" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{questions}" as="question">
+		<tr>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.typ}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.answer1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.nextquestion1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.correct1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.answer2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.nextquestion2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.correct2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.answer3}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.nextquestion3}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.correct3}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.answer4}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.nextquestion4}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.correct4}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.answer5}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.nextquestion5}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{question : question}"> {question.correct5}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{question : question}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{question : question}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Question</f:link.action>
+</f:section>

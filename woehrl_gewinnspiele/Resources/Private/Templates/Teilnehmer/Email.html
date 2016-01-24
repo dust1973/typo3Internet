@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{Gewinnspiel}</title>
+    <meta name="description" content="">
+    <meta name="author" content="fuchsa">
+
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+
+<body>
+<!-- ###TEMPLATE### begin -->
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>W&ouml;hrl - Gewinnspiel</title>
+    <style type='text/css'>
+        * {
+            color: #333333;
+            margin: 0px;
+        }
+        .karte {
+            font-size: 11px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+            border-collapse: collapse;
+            line-height: 15px;
+        }
+        table {
+            border-collapse: separate;
+        }
+
+        td,p {
+            font-family: Arial, Helvetica, sans-serif;
+            FONT-SIZE: 12px;
+            color:#666666;
+        }
+
+    </style>
+</head>
+<body bgcolor='#fcfcfc'>
+<center>
+    <table width="680" border="0" cellspacing="0" cellpadding="0" align="center" >
+        <tr>
+            <td width="10">&nbsp;</td>
+            <td width="660"><A href="http://www.woehrl.de/" title="*** WÖHRL - Gewinnspiel ***" target=_blank><A
+                    href="http://www.woehrl.de/" target=_blank>
+
+                <img border=0 alt="*** WÖHRL - Gewinnspiel ***" src="http://www.woehrl.de/fileadmin/images/Woehrl-stylecard.png" /></A>
+
+
+            </td>
+            <td width="10">&nbsp;</td>
+        </tr>
+        <tr>
+            <td></td><td><img src="http://www.woehrl.de/fileadmin/images/navi.png" border="0" usemap="#Map" /></td><td></td></tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><a href='http://www.woehrl.de/' target='_blank'>
+                <img src="http://woehrl.de/fileadmin/user_upload/Gewinnspiele/gewinnspiel.jpg" width="660" alt="*** WÖHRL - Gewinnspiel ***"  />
+
+            </a>
+
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td style="font-family: Arial, Helvetica, sans-serif; FONT-SIZE: 12px"
+                width=600><br /><br /><P style="color:#666;">
+
+                <f:if condition="{Anrede}==1">
+                    Sehr geehrter Herr
+                </f:if>
+                <f:if condition="{Anrede}==2">
+                    Sehr geehrte Frau
+                </f:if>
+                {Vorname} {Nachname},<br /><br />
+                Wir bedanken uns für die Teilnahme an unserem Gewinnspiel.
+                <br />
+                <br />
+                Um sicher zu gehen, dass kein Dritter sich mit Ihren Daten angemeldet hat,
+                <br>
+                bitten wir Sie den folgenden Link zu best&auml;tigen: &nbsp;<a style="color:red;" href="{BestaetigungLink}">http://www.woehrl.de/gewinnspiel_woehrl.html</a>
+
+                <br>
+                <br>
+                Falls Sie dies nicht wollen k&ouml;nnen Sie diese Mail einfach ignorieren.<br>
+            </p>
+                <table>
+                    <tr>
+                        <td>Vorname</td>
+                        <td> {Vorname} </td>
+                    </tr>
+                    <tr>
+                        <td>Nachname</td>
+                        <td> {Nachname} </td>
+                    </tr>
+                    <tr>
+                        <td>Wohnort</td>
+                        <td> {Wohnort} </td>
+                    </tr>
+                    <tr>
+                        <td>Strasse und HausNr.</td>
+                        <td> {Address} </td>
+                    </tr>
+                    <tr>
+                        <td>PLZ</td>
+                        <td>{PLZ}</td>
+                    </tr>
+                    <tr>
+                        <td>E-mail</td>
+                        <td>{EmpfaengerEmail}</td>
+                    </tr>
+                    <tr>
+                        <td colspan='2'>
+
+                            Die Anmeldung erfolgte am <f:format.date format="d.m.Y">{DATEMAIL}</f:format.date>
+                            &uuml;ber die IP-Adresse {REMOTE_ADDR}</td>
+                    </tr>
+                </table>
+
+                <br>
+                <br>
+
+                <DIV id=idTextPanel>
+                    <P style="color:#666;"><I>Herzlichst Ihr<br />
+                        <br />
+                        WÖHRL stylecard-Service<br />
+                        Rudolf Wöhrl AG<br />
+                        Tel.: 0911 / 8121 111*<br />
+                        E-Mail: stylecard@woehrl.de<br />
+                        Internet: www.woehrl.de<br />
+
+                    </I></P>
+                    <p style="font-size:10px;color:#666;">* Verbindungspreis entspricht Preis aus dem deutschen Festnetz. Mobilfunkpreis ggf. abweichend.</p>
+                </DIV>
+            </td>
+
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td valign="middle"><hr style="width:660px;border:0px;border-top:1px solid #ccc;" /></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td style="font-family: Arial, Helvetica, sans-serif; FONT-SIZE: 12px"><A
+                    href="www.woehrl.de/stylecard"><IMG
+                    title="Jetzt stylecard beantragen und Vorteile sichern!" border="0"
+                    alt="Jetzt stylecard beantragen und Vorteile sichern!" width="660"
+                    src="http://www.woehrl.de/fileadmin/images/stylecard_nl.png" /></A></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td style="font-family: Arial, Helvetica, sans-serif; FONT-SIZE: 12px;color:#666666;"><p style="font-family: Arial, Helvetica, sans-serif; FONT-SIZE: 14px;color:#666666;"><br>
+                Ihre stylecard-Vorteile<br /><br /></p>
+                <table style="font-family: Arial, Helvetica, sans-serif; FONT-SIZE: 12px;color:#666666;"><tr>
+                    <td width="330" style="font-family: Arial, Helvetica, sans-serif; FONT-SIZE: 12px;color:#666666;">&#8226; bis zu 5% stylecard Bonus</td>
+                    <td width="330">&#8226; stylecard Vorteilspreise </td></tr><tr><td>&#8226; attraktive Preisvorteile</td>
+                    <td>&#8226; frühzeitige Informationen zu Aktionen</td></tr><tr><td>&#8226; exklusive Shopping-Events</td>
+                    <td>&#8226; Auswahl-Service</td></tr><tr>
+                    <td>&#8226; mystyle Magazin*</td>
+                    <td>&#8226; 50% auf unseren Änderungsservice*</td></tr>
+                    <td>&#8226; Willkommensgeschenk*</td><td></td></tr></table>
+                <p><br />* nur für Inhaber stylecardEXCLUSIVE. <br>
+                    <br>
+                    Die stylecardEXCLUSIVE erhalten Sie automatisch ab einem<br>
+                    &#8226; Jahresumsatz von 2.000&#8364;, oder ab einem
+                    <br>
+                    &#8226; Jahresumsatz von 1.000&#8364; in drei auf einanderfolgenden Jahren
+                    <br>
+                    Sie gilt ab Erhalt bis zum 31.12. des Folgejahres.<br>
+                    <br>
+                    <br>
+                </p>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td valign="middle"><hr style="width:660px;border:0px;border-top:1px solid #ccc;" /></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td width="660"><p style="font-size:10px;color:#666;font-family: Arial, Helvetica, sans-serif; "><b>Herausgeber:</b>
+                Rudolf Wöhrl AG |
+                Lina-Ammon-Straße 10 |
+                D-90471 Nürnberg, Amtsgericht Nürnberg HRB 27869, Ust-ID-Nr.:DE 221 55 98 63<br/>
+                <strong>Vorstand:</strong> Herr Olivier Wöhrl (Vorsitzender), Herr
+                Robert Rösch<br/> <strong>Aufsichtsrat:</strong> Dr. Ekkehard Franzke,
+                Andreas E. Mach,
+                Manfred Zipp <a style="font-size:10px;color:#666;font-family: Arial, Helvetica, sans-serif; "
+                                href="http://www.woehrl.de/impressum.html">Impressum </a><br/><br/></p></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td valign="middle">
+                <hr style="width:660px;border:0px;border-top:1px solid #ccc;"/>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <p>&nbsp;</p>
+
+    <p>&nbsp;</p>
+
+    <p>&nbsp;</p>
+
+    <p>&nbsp;</p>
+
+    <map name="Map">
+        <area shape="rect" coords="503,3,657,41" href="http://www.woehrl.de/unternehmen.html">
+        <area shape="rect" coords="377,3,502,40" href="http://www.woehrl.de/aktuelles.html">
+        <area shape="rect" coords="251,3,378,39" href="http://www.woehrl.de/marken.html">
+        <area shape="rect" coords="105,3,253,42" href="http://www.woehrl.de/modehaeuser.html">
+        <area shape="rect" coords="2,2,106,41" href="http://www.woehrl.de/fashion.html">
+    </map>
+
+</center>
+
+</body>
+</html>

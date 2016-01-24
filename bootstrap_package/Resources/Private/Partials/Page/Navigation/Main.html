@@ -1,0 +1,43 @@
+
+<div class="navbar-wrapper">
+	<div role="navigation" class="navbar navbar-default">
+		<div class="row">
+			<div class="navbar-header navbar-header-main">
+				<f:if condition="{f:cObject(typoscriptObjectPath:'lib.navigation.main')}">
+					<button type="button" class="navbar-toggle navbar-toggle-menu pull-left" data-toggle="collapse"
+							data-target=".navbar-collapse">
+                        <span class="hidden-md hidden-lg " style="padding-left:1.2em;" >Navigationsmenü</span>   <span class="glyphicon glyphicon-list" style="padding-left:1.0em;"></span>
+
+					</button>
+				</f:if>
+
+			</div>
+
+			<div class="navbar-collapse collapse">
+			<div class="col-md-9 col-lg-7 col-sm-12">
+				<f:cObject typoscriptObjectPath="lib.navigation.main"/>
+			</div>
+
+
+			<div class="col-md-9 col-lg-5 col-xs-12 col-sm-12 pull-right">
+                    <f:form class="navbar-form navbar-right" pageUid="88" extensionName="woehrlnewsletter_pi1"
+                            additionalAttributes="{role:'search'}">
+
+					<div class="form-group">
+						<div class="col-md-3 col-sm-3" style=" line-height: 2.1em;font-size: 16px;">Newsletter</div>
+						<div class="col-md-5 col-sm-5">
+
+                            <f:form.textfield class="form-control"  name="tx_woehrlnewsletter_pi1[email]" value="{email}" placeholder="Ihre E-Mail-Adresse"  />
+                        </div>
+						<div class="col-md-4 col-sm-4">
+                            <f:form.submit name="tx_woehrlnewsletter_pi1[submit]" class="btn btn-default" value="Abonnieren" />
+                        </div>
+					</div>
+
+				</f:form>
+			</div>
+				</div>
+			</div>
+
+	</div>
+</div>

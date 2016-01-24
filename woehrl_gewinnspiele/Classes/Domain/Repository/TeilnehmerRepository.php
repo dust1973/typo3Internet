@@ -1,0 +1,50 @@
+<?php
+namespace WOEHRL\WoehrlGewinnspiele\Domain\Repository;
+
+
+/***************************************************************
+ *
+ *  Copyright notice
+ *
+ *  (c) 2015 Alexander Fuchs <alexander.fuchs@woehrl.de>, Rudolf WÖHRL AG
+ *
+ *  All rights reserved
+ *
+ *  This script is part of the TYPO3 project. The TYPO3 project is
+ *  free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The GNU General Public License can be found at
+ *  http://www.gnu.org/copyleft/gpl.html.
+ *
+ *  This script is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  This copyright notice MUST APPEAR in all copies of the script!
+ ***************************************************************/
+
+/**
+ * The repository for Teilnehmers
+ */
+class TeilnehmerRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+
+    /**
+     * Find previous item by email
+     * @param string \WOEHRL\WoehrlGewinnspiele\Domain\Model\Teilnehmende $key
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface|array
+
+     */
+    public function getTeilnehmendeNachMd5Uid($key) {
+
+
+        $query = $this->createQuery();
+        $query->statement('SELECT * FROM tx_woehrlgewinnspiele_domain_model_teilnehmer WHERE MD5(uid) = "'.$key.'" LIMIT 1');
+        return $query->execute()->getFirst();
+        //SELECT * FROM tx_woehrlgewinnspiele_domain_model_teilnehmer WHERE MD5(uid) = "c74d97b01eae257e44aa9d5bade97baf" LIMIT 1
+
+    }
+}

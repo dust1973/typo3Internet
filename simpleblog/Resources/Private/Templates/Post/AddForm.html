@@ -1,0 +1,13 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Default"/>
+	<title>Templates: AddForm</title>
+	<f:section name="main">
+
+		<f:section name="main">
+			<f:render partial="Post/Form"
+					  arguments="{headline:'heading_create_post',action:'add',submitmessage:'button_new_post',blog:blog,post:post,tags:tags}" section="Main"/>
+
+		</f:section>
+	</f:section>
+</div>

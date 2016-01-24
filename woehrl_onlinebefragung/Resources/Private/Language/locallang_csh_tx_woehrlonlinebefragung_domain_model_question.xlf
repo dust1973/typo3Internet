@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-07-06T10:30:31Z" product-name="woehrl_onlinebefragung">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="typ.description">
+				<source>typ</source>
+			</trans-unit>
+			<trans-unit id="answer1.description">
+				<source>answer1</source>
+			</trans-unit>
+			<trans-unit id="nextquestion1.description">
+				<source>nextquestion1</source>
+			</trans-unit>
+			<trans-unit id="correct1.description">
+				<source>correct1</source>
+			</trans-unit>
+			<trans-unit id="answer2.description">
+				<source>answer2</source>
+			</trans-unit>
+			<trans-unit id="nextquestion2.description">
+				<source>nextquestion2</source>
+			</trans-unit>
+			<trans-unit id="correct2.description">
+				<source>correct2</source>
+			</trans-unit>
+			<trans-unit id="answer3.description">
+				<source>answer3</source>
+			</trans-unit>
+			<trans-unit id="nextquestion3.description">
+				<source>nextquestion3</source>
+			</trans-unit>
+			<trans-unit id="correct3.description">
+				<source>correct3</source>
+			</trans-unit>
+			<trans-unit id="answer4.description">
+				<source>answer4</source>
+			</trans-unit>
+			<trans-unit id="nextquestion4.description">
+				<source>nextquestion4</source>
+			</trans-unit>
+			<trans-unit id="correct4.description">
+				<source>correct4</source>
+			</trans-unit>
+			<trans-unit id="answer5.description">
+				<source>answer5</source>
+			</trans-unit>
+			<trans-unit id="nextquestion5.description">
+				<source>nextquestion5</source>
+			</trans-unit>
+			<trans-unit id="correct5.description">
+				<source>correct5</source>
+			</trans-unit>
+			<trans-unit id="relation.description">
+				<source>relation</source>
+			</trans-unit>
+			<trans-unit id="category.description">
+				<source>category</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

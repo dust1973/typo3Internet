@@ -1,0 +1,68 @@
+<f:form.validationResults for="{object}">
+        <f:if condition="{validationResults.flattenedErrors}">
+            <div class="alert alert-danger">
+                <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+                    <!--{propertyPath}-->
+                    <f:if condition="{propertyPath} == 'newTeilnehmer.gender'">
+                        <ul>
+                            <li>
+                                Bitte wählen Sie Ihre Anrede aus.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'newTeilnehmer.firstname'">
+                        <ul>
+                            <li>
+                                Bitte geben Sie Ihren Vornamen an.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'newTeilnehmer.lastname'">
+                        <ul>
+                            <li>
+                                Bitte geben Sie Ihren Nachnamen an.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'newTeilnehmer.email'">
+                        <ul>
+                            <li>
+                                Bitte geben Sie eine gültige E-Mail-Adresse ein.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'newTeilnehmer.zip'">
+                        <ul>
+                            <li>
+                                Bitte geben Sie Ihre PLZ an.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'stylecardantrag.agb'">
+                        <ul>
+                            <li>
+                                Bitte akzeptieren Sie die AGB
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'newTeilnehmer.city'">
+                        <ul>
+                            <li>
+                                Bitte geben Sie Ihren Wohnort an.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'newTeilnehmer.address'">
+                        <ul>
+                            <li>
+                                Bitte geben Sie Ihre Strasse und Hausnummer an.
+                            </li>
+                        </ul>
+                    </f:if>
+
+
+                </f:for>
+            </div>
+        </f:if>
+    </f:form.validationResults>
+

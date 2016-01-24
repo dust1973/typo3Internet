@@ -1,0 +1,229 @@
+{namespace m = WOEHRL\WoehrlKassenbongewinnspiel\ViewHelpers}
+
+<div class="row">
+    <div class="col-md-12">
+        <f:format.html><h3>Registrieren Sie jetzt Ihren Kassenbon und mit etwas Glück gehören Sie zu den 10 Gewinnern*.</h3>
+           <p></p> Wir verlosen jeden Monat 2 SHOPPINGCARDS über 250 € und 7 SHOPPINGCARDS über 100 € und einen weiteren tollen Hauptgewinn! Viel Glück!</p></f:format.html>
+    </div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+
+
+
+
+<hr />
+
+
+<div class="row">
+    <div class="col-md-6  col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="filiale">Filiale*</label>
+
+            <div class="col-md-4 col-sm-8">
+                <f:form.textfield class="required form-control" property="filiale" size="40" type="text" maxlength="3"  />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6  col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="kasse">Kasse*</label>
+
+            <div class="col-md-4 col-sm-8">
+                <f:form.textfield class="required form-control"  property="kasse" size="40" type="text" maxlength="4"  />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+<div class="row">
+    <div class="col-md-6  col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="bon">Bon*</label>
+
+            <div class="col-md-4 col-sm-8">
+                <f:form.textfield class="required form-control" property="bon" size="40" type="text" maxlength="5"  />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6  col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="kasse">Bondatum*</label>
+
+            <div class="col-md-9 col-sm-8">
+
+
+
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker2'>
+
+                        <f:form.textfield type="text" property="bondatum"
+                                          class="required form-control"
+                                          name="bondatum" />
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="anrede">Anrede*</label>
+
+            <div class="col-md-6 col-sm-8">
+                <f:form.select property="gender" class="form-control" id="anrede" options="{1: 'Herr', 2: 'Frau'}" prependOptionLabel="--Bitte wählen--" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="titel">Titel</label>
+
+            <div class="col-md-6 col-sm-8">
+
+                <f:form.select  property="title"  class="form-control" id="title"
+                                options="{
+                                       A: 'Bachelor',
+                                       B: 'Baron',
+                                       4: 'Dipl. Ing.',
+                                       3: 'Dipl. Kfm.',
+                                       5: 'Direktor',
+                                       1: 'Dr.',
+                                       8: 'Dr. med.',
+                                       D: 'Graf',
+                                       C: 'Gräfin',
+                                       6: 'Ing.',
+                                       7: 'Magister',
+                                       2: 'Prof.',
+                                       9: 'Prof. Dr.'
+                                       }"
+                                prependOptionLabel="--Bitte wählen--" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+
+<div class="row">
+    <div class="col-md-6  col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="firstname">Vorname*</label>
+
+            <div class="col-md-9 col-sm-8">
+                <f:form.textfield class="required form-control" property="firstname" size="40"   />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6  col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="lastname">Nachname*</label>
+
+            <div class="col-md-9 col-sm-8">
+                <f:form.textfield class="required form-control"  property="lastname" size="40"  />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="zip">PLZ*</label>
+
+            <div class="col-md-4 col-sm-4">
+                <f:form.textfield class="required form-control" property="zip"  maxlength="5"   />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="city">Wohnort</label>
+
+            <div class="col-md-9 col-sm-8">
+                <f:form.textfield class="form-control" property="city"  />
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="address">Str. / Nr.</label>
+            <div class="col-md-9 col-sm-8">
+                <f:form.textfield class="required form-control"  property="address" size="40"   />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="email">E-Mail*</label>
+            <div class="col-md-9 col-sm-8">
+                <f:form.textfield class="required form-control"  property="email" size="40"   />
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-md-3 col-sm-3" >
+        <img src="http://www.woehrl.de/fileadmin/user_upload/Gewinnspiele/newsletter.png"  />
+
+    </div>
+
+    <div class="col-md-9 col-sm-9" >
+
+        <label>
+
+            <f:form.checkbox property="werbung"  checked="{newTeilnehmende.werbung}" style="height:15px;width:15px;" value="1" />
+        </label>
+
+        Ja, ich möchte von WÖHRL* exklusive Angebote, Produktinformationen und Einladungen per Brief oder E-Mail erhalten. Ich bin damit einverstanden, dass genannte Angaben zu eigenen und Marketingzwecken erhoben, verarbeitet und genutzt werden...
+        <button type="button"  class="btn btn-primary btn-xs " data-container="body" data-toggle="popover"
+                data-placement="top"
+                data-content="<span style='font-size:12px;'> Zur Versendung von Informationen per Post oder E-Mail werden die notwendigen Daten fallweise durch beauftragte Dienstleistungsunternehmen verarbeitet (Auftragsdatenverarbeiter).
+							Unmittelbar nach Durchführung der Aktion werden Ihre Daten dort gelöscht.
+							<br /><br /> Diese Einwilligung sowie das Einverständnis zum Erhalt von Angeboten, Produktinformationen und Einladungen per Brief oder E-Mail kann jederzeit über den WÖHRL Kundenservice, Lina-Ammon-Str. 10, 90471 Nürnberg per Post oder über www.woehrl.de per E-Mail für die Zukunft widerrufen werden.<br />
+							*Die zur Unternehmensgruppe WÖHRL gehörenden Unternehmen: Rudolf Wöhrl, das Haus der Markenkleidung GmbH & Co. KG; WÖHRL, das Haus der Markenkleidung GmbH & Co. KG; WÖHRL, das Haus der Markenkleidung Rudolf Wöhrl GmbH & Co. KG; Textilhandels-40 GmbH; WÖHRL GmbH & Co. KG, Center für Mode und Sport; Kaufhaus Wöhrl GmbH & Co. KG; Georg Völk GmbH & Co. KG; MV Mode- und Vertriebs GmbH; No. 10 Mode GmbH & Co. KG; WÖHRL-net GmbH & Co. KG; WÖHRL-15 GmbH; U-eins by WÖHRL GmbH sowie Nadel und Zwirn GmbH.
+							<br /><br />
+	                        ">
+            Weiterlesen
+        </button>
+
+
+
+    </div>
+
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+<div class="row">
+    <div class="col-md-4 col-sm-12" >
+        <p>
+            <f:form.submit name="submit" class="btn btn-primary btn-lg" value="Jetzt teilnehmen!" />
+
+        </p>
+    </div>
+</div>
+
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+<div class="row">
+    <div class="col-md-12 col-sm-12" >
+        <p style="font-size: small;">
+            *Teilnahmebedingungen: Zur Teilnahme am Gewinnspiel tragen Sie Ihre Kassenbonnummer zusammen mit der Nummer
+            der Filiale und Ihren Kontaktdaten bis zum <b><m:AblaufDatum></m:AblaufDatum></b> ein. Der Gewinner wird durch Losentscheid ermittelt. Der Hauptgewinn variiert monatlich. Die Registrierung muss im gleichen Monat erfolgen, in dem der Bon ausgestellt wurde. Eine Teilnahme in einem weiteren Monat ist nur mit einem neuen Kassenbon möglich. Die Gewinner werden zu Beginn
+            des Folgemonats schriftlich per E-Mail benachrichtigt.
+            Teilnahmeberechtigt sind nur volljährige Personen. Mitarbeiter der Unternehmensgruppe WÖHRL sind von der Teilnahme ausgeschlossen.
+
+        </p>
+    </div>
+</div>
+
+
+

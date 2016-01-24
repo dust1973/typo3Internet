@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-03-07T11:38:12Z" product-name="woehrl_kassenbongewinnspiel">
+		<header/>
+		<body>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer">
+				<source>Teilnehmer</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.gender">
+				<source>Gender</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.firstname">
+				<source>Firstname</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.lastname">
+				<source>Lastname</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.zip">
+				<source>Zip</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.werbung">
+				<source>Werbung</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.filiale">
+				<source>Filiale</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.kasse">
+				<source>Kasse</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.bon">
+				<source>Bon</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlkassenbongewinnspiel_domain_model_teilnehmer.bondatum">
+				<source>Bondatum</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

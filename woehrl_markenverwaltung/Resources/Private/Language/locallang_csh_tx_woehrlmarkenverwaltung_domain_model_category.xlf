@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-02-02T16:59:00Z" product-name="woehrl_markenverwaltung">
+		<header/>
+		<body>
+			<trans-unit id="kategoriename.description">
+				<source>kategoriename</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

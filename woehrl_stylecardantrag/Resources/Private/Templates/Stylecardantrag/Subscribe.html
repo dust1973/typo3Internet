@@ -1,0 +1,46 @@
+
+<f:switch expression="{content}">
+    <f:case value="2">
+
+<h3>Vielen Dank. Ihre Anmeldung ist nun erfolgt!</h3>
+<p>Freuen Sie sich auf Ihre persönliche WÖHRL stylecard, die Sie in Kürze per Post von uns erhalten. Zusätzlich senden wir
+    Ihnen per E-Mail eine vorläufige stylecard zu. Mit dieser können
+    Sie ab sofort alle stylecard-Vorteile genießen. Drucken Sie dazu einfach die
+    E-Mail mit Ihrer vorläufigen WÖHRL stylecard aus und zeigen Sie diese beim Einkauf in Ihrer Filiale vor.
+    Für die Anmeldung zum WÖHRL Newsletter erhalten Sie als Dankeschön zudem einen 5€-Einkaufsgutschein per E-Mail zugeschickt,
+    welchen Sie direkt bei Ihrem nächsten Einkauf in Ihrem WÖHRL Haus einlösen können.
+</p>
+<p>Wir bedanken uns bei Ihnen für Ihr Vertrauen und wünschen Ihnen viel Spaß mit Ihrer neuen WÖHRL stylecard.</p>
+<p>Herzlichst Ihr<br /><br />
+    WÖHRL stylecard Service<br />
+    Rudolf Wöhrl AG<br />
+    Tel.: 0911 / 8121 111*<br />
+    E-Mail: stylecard@woehrl.de<br /><br />
+    <small>*Verbindungspreis entspricht Preis aus dem deutschen Festnetz. Mobilfunkpreis ggf. abweichend.</small>
+</p>
+    </f:case>
+    <f:case value="3">
+        <div class="alert alert-danger" role="alert">
+            Ein Fehler ist aufgetreten, versuchen sie es später noch einmal!
+        </div>
+    </f:case>
+    <f:case value="4">
+        <div class="alert alert-danger" role="alert">
+            Ein Fehler ist aufgetreten, versuchen sie es später noch einmal!
+        </div>
+    </f:case>
+
+    <f:case value="5">
+        <div class="alert alert-danger" role="alert">
+            Fehler: Es ist bereits ein Benutzer mit der angegebenen E-Mail-Adresse angemeldet!
+        </div>
+    </f:case>
+
+    <f:case value="6">
+        <div class="alert alert-danger" role="alert">
+            Der Dienst zur zeit nicht Verfügbar, versuchen Sie es später noch einmal!
+        </div>
+    </f:case>
+
+    </f:switch>
+

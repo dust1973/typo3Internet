@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-01-30T11:57:07Z" product-name="woehrl_filialsuche">
+		<header/>
+		<body>
+			<trans-unit id="tx_woehrlfilialsuche_domain_model_filiale">
+				<source>Filiale</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlfilialsuche_domain_model_filiale.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlfilialsuche_domain_model_filiale.adresse">
+				<source>Adresse</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,27 @@
+{namespace tv = Typovision\Simpleblog\ViewHelpers}
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	  xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<head>
+	<title>Partials: Form</title>
+</head>
+<body>
+<f:section name="Main">
+	<f:form.validationResults for="blog">
+		<div class="form-group">
+			<label {f:if(condition:validationResults.flattenedErrors.title,then:'
+				   class="text-danger"')}>
+			<f:translate key="blog.label.title"/>
+			</label>
+			<f:form.textfield property="title" class="form-control"/>
+		</div>
+		<div class="form-group">
+			<label {tv:hasError(property:'description',then:' class="text-danger"')}>
+			<f:translate key="blog.label.description"/>
+			</label>
+			<f:form.textarea property="description" class="form-control"/>
+		</div>
+	</f:form.validationResults>
+</f:section>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Default"/>
+	<title>Templates: UpdateForm</title>
+	<f:section name="main">
+		<h1>
+			<f:translate key="heading_update_blog"/>
+		</h1>
+		<f:render partial="Error" section="Main" arguments="{object:blog}"/>
+		<f:form action="update" object="{blog}" name="blog" additionalAttributes="{role:'form'}">
+			<f:render partial="Blog/Form" section="Main"/>
+			<f:form.submit value="{f:translate(key:'button_update_blog')}!"
+						   class="btn btn-primary"/>
+		</f:form>
+	</f:section>
+</div>

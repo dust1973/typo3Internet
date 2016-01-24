@@ -1,0 +1,253 @@
+{namespace n= WOEHRL\WoehrlOnlinebefragung\ViewHelpers}
+
+
+<f:form action="{action}" object="{Question}" name="form" controller="Question"
+        additionalAttributes="{role:'form'}"  class="well">
+
+    <div class="tx_woehrlonlinebefragung_pi1-title"><h4>{question.title}</h4></div>
+    <div class="tx_woehrlonlinebefragung_pi1-answer ">
+
+        <f:switch expression="{question.typ}">
+            <f:case value="0">
+                <f:if condition="{question.answer1}">
+                    <div class="checkbox">
+                        <label>
+                            <f:form.checkbox name="answer[]" value="1"/>
+                            {question.answer1}</label>
+                    </div>
+                </f:if>
+                <f:if condition="{question.answer2}">
+                    <div class="checkbox">
+                        <label>
+                            <f:form.checkbox name="answer[]" value="2"/>
+                            {question.answer2}</label>
+                    </div>
+                </f:if>
+                <f:if condition="{question.answer3}">
+                    <div class="checkbox">
+                        <label>
+                            <f:form.checkbox name="answer[]" value="3"/>
+                            {question.answer3}</label>
+                    </div>
+                </f:if>
+                <f:if condition="{question.answer4}">
+                    <div class="checkbox">
+                        <label>
+                            <f:form.checkbox name="answer[]" value="4"/>
+                            {question.answer4}</label>
+                    </div>
+                </f:if>
+                <f:if condition="{question.answer5}">
+                    <div class="checkbox">
+                        <label>
+                            <f:form.checkbox name="answer[]" value="5"/>
+                            {question.answer5}</label>
+                    </div>
+                </f:if>
+            </f:case>
+            <f:case value="1">
+                <div class="form-group">
+
+                    <f:if condition="{question.answer1}">
+                        <div class="radio">
+                            <label>
+                                <f:form.radio name="answer" value="1"/>
+                                {question.answer1}
+                            </label>
+                        </div>
+
+                    </f:if>
+                    <f:if condition="{question.answer2}">
+                        <div class="radio">
+                            <label>
+                                <f:form.radio name="answer" value="2"/>
+                                {question.answer2} </label>
+                        </div>
+                    </f:if>
+                    <f:if condition="{question.answer3}">
+                        <div class="radio">
+                            <label>
+                                <f:form.radio name="answer" value="3"/>
+                                {question.answer3} </label>
+                        </div>
+                    </f:if>
+                    <f:if condition="{question.answer4}">
+                        <div class="radio">
+                            <label>
+                                <f:form.radio name="answer" value="4"/>
+                                {question.answer4} </label>
+                        </div>
+                    </f:if>
+                    <f:if condition="{question.answer5}">
+                        <div class="radio">
+                            <label>
+                                <f:form.radio name="answer" value="5"/>
+                                {question.answer5} </label>
+                        </div>
+                    </f:if>
+                </div>
+
+            </f:case>
+            <f:case value="2">
+                <f:form.select name="answer" options="{
+                answer1: '{question.answer1}',
+                answer2: '{question.answer2}',
+                answer3: '{question.answer3}',
+                answer4: '{question.answer4}',
+                answer5: '{question.answer5}',
+                }"/>
+            </f:case>
+            <f:case value="3">
+
+            </f:case>
+
+            <f:case value="4">
+
+                <div class="radio">
+                    <label>
+                        <f:form.radio name="answer" value="1"/>
+                        {question.answer1}
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <f:form.radio name="answer" value="2"/>
+                        {question.answer2}
+                    </label>
+                </div>
+
+            </f:case>
+            <f:case value="5">
+                <div class="form-group">
+                    <f:form.textarea name="answer" class="form-control" rows="5"/>
+                </div>
+
+            </f:case>
+            <f:case value="6">
+
+            </f:case>
+            <f:case value="7">
+                <!--input id="input-21b" type="number" value="" name="answer" class="rating" data-symbol="&#xE125" data-glyphicon="true"  min=0 max=10 step=1 data-size="md" data-stars="10"-->
+                (1 Stern = sehr unzufrieden / 10 Sterne = sehr zufrieden)
+                <ol type="1">
+
+
+                    <f:if condition="<n:ObInterger path='{question.answer1}' />">
+                        <f:then>
+                           <f:form.textfield id="input-21f"
+                                              type="number"
+                                              additionalAttributes="{
+                                          min: 0,
+                                          max: 10,
+                                          step: 1,
+                                          data-size:'md',
+                                          data-stars: 10
+                                          }"
+                                              name="answer[]"
+                                              class="rating"
+                                              value=""
+                                    />
+                        </f:then>
+                        <f:else>
+                            <li><p class="star">{question.answer1}</p>   <f:form.textfield id="input-21f"
+                                                                                           type="number"
+                                                                                           additionalAttributes="{
+                                          min: 0,
+                                          max: 10,
+                                          step: 1,
+                                          data-size:'md',
+                                          data-stars: 10
+                                          }"
+                                                                                           name="answer[]"
+                                                                                           class="rating"
+                                                                                           value=""
+                                    /></li>
+                        </f:else>
+                    </f:if>
+                    <f:if condition="{question.answer2}">
+                        <li><p>{question.answer2}</p> <f:form.textfield id="input-22f"
+                                                                        type="number"
+                                                                        additionalAttributes="{
+                                          min: 0,
+                                          max: 10,
+                                          step: 1,
+                                          data-size:'md',
+                                          data-stars: 10
+                                          }"
+                                                                        name="answer[]"
+                                                                        class="rating"
+                                                                        value=""
+                                /></li>
+                    </f:if>
+                    <f:if condition="{question.answer3}">
+                        <li><p class="star">{question.answer3}</p>
+                            <f:form.textfield id="input-23f"
+                                              type="number"
+                                              additionalAttributes="{
+                                          min: 0,
+                                          max: 10,
+                                          step: 1,
+                                          data-size:'md',
+                                          data-stars: 10
+                                          }"
+                                              name="answer[]"
+                                              class="rating"
+                                              value=""
+                                    /></li>
+                    </f:if>
+                    <f:if condition="{question.answer4}">
+                        <li><p class="star">{question.answer4}</p>  <f:form.textfield id="input-24f"
+                                                                                      type="number"
+                                                                                      additionalAttributes="{
+                                          min: 0,
+                                          max: 10,
+                                          step: 1,
+                                          data-size:'md',
+                                          data-stars: 10
+                                          }"
+                                                                                      name="answer[]"
+                                                                                      class="rating"
+                                                                                      value=""
+                                /></li>
+                    </f:if>
+                    <f:if condition="{question.answer5}">
+                        <li><p class="star">{question.answer5}</p>  <f:form.textfield id="input-25f"
+                                                                                      type="number"
+                                                                                      additionalAttributes="{
+                                          min: 0,
+                                          max: 10,
+                                          step: 1,
+                                          data-size:'md',
+                                          data-stars: 10
+                                          }"
+                                                                                      name="answer[]"
+                                                                                      class="rating"
+                                                                                      value=""
+                                /></li>
+                    </f:if>
+                </ol>
+            </f:case>
+        </f:switch>
+    </div>
+    <f:form.hidden name="question" value="{question.uid}"/>
+    <f:form.hidden name="uid" value="{uid}"/>
+    <f:form.hidden name="submit" value="2"/>
+
+    <hr/>
+    <f:if condition="{question.typ} != 6 ">
+        <f:then>
+            <div>
+                <button type="button" class="btn btn-primary" name="tx_woehrlonlinebefragung_pi1[next-button]"
+                        onclick="submit(this.form);"> Weiter
+                </button>
+                <br><br>
+                <!--button type="button" class="btn " name="tx_woehrlonlinebefragung_pi1[back-button]"
+                        onclick="submit(this.form);">Zurück
+                </button-->
+            </div>
+        </f:then>
+        <f:else>
+
+        </f:else>
+    </f:if>
+</f:form>

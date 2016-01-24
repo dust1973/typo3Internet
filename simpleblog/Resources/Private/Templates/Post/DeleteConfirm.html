@@ -1,0 +1,16 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Default"/>
+	<title>Templates: DeleteConfirm</title>
+	<f:section name="main">
+		<h1>
+			<f:translate key="heading_delete_post"/>
+		</h1>
+		<f:translate key="text_delete_confirm_post" arguments="{1:post.title, 2:blog.title}" />
+		<br/><br/>
+		<f:link.action action="list" class="btn btn-danger"><f:translate key="button_delete_confirm_no" />
+		</f:link.action>
+		<f:link.action action="delete" class="btn btn-success" arguments="{post:post, blog:blog}">
+		<f:translate key="button_delete_confirm_yes"/></f:link.action>
+	</f:section>
+</div>

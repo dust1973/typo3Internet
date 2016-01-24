@@ -1,0 +1,64 @@
+plugin.tx_simpleblog {
+	view {
+		templateRootPath = {$plugin.tx_simpleblog.view.templateRootPath}
+		partialRootPath = {$plugin.tx_simpleblog.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_simpleblog.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_simpleblog.persistence.storagePid}
+	}
+	settings {
+		blog.max = 5
+	}
+}
+
+page {
+	includeCSS {
+		bootstrap = EXT:simpleblog/Resources/Public/Bootstrap/css/bootstrap.min.css
+		simpleblog = EXT:simpleblog/Resources/Public/Css/Simpleblog.css
+	}
+	includeJSlibs {
+		//jquery = http://code.jquery.com/jquery.js
+		//jquery.external = 1
+		// local installation, so I can't rely on the cdn
+		jquery = EXT:simpleblog/Resources/Public/Bootstrap/js/jquery.js
+		bootstrap = EXT:simpleblog/Resources/Public/Bootstrap/js/bootstrap.min.js
+	}
+}
+
+plugin.tx_simpleblog._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-simpleblog table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-simpleblog table th {
+		font-weight:bold;
+	}
+
+	.tx-simpleblog table td {
+		vertical-align:top;
+	}
+)
+
+ajax =  PAGE
+ajax {
+	typeNum = 99
+	config {
+		disableAllHeaderCode = 1
+		additionalHeaders = Content-type:application/json
+		xhtml_cleaning = 0
+		admPanel = 0
+	}
+	10 < tt_content.list.20.simpleblog_bloglisting
+}

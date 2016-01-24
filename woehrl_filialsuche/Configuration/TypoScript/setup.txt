@@ -1,0 +1,56 @@
+
+plugin.tx_woehrlfilialsuche {
+	view {
+		templateRootPath = {$plugin.tx_woehrlfilialsuche.view.templateRootPath}
+		partialRootPath = {$plugin.tx_woehrlfilialsuche.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_woehrlfilialsuche.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_woehrlfilialsuche.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+	settings {
+		zoom = 7
+		#Nürnberg
+		lon_pos = 11.07075
+		lat_pos = 49.45060
+		filialenKarte = 0
+	}
+}
+
+plugin.tx_woehrlfilialsuche._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-woehrl-filialsuche table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-woehrl-filialsuche table th {
+		font-weight:bold;
+	}
+
+	.tx-woehrl-filialsuche table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)

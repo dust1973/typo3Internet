@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-02-02T16:59:00Z" product-name="woehrl_markenverwaltung">
+		<header/>
+		<body>
+			<trans-unit id="tx_woehrlmarkenverwaltung_domain_model_marke">
+				<source>Marke</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlmarkenverwaltung_domain_model_marke.marke">
+				<source>Marke</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlmarkenverwaltung_domain_model_marke.markelink">
+				<source>Markelink</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlmarkenverwaltung_domain_model_marke.categorys">
+				<source>Categorys</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlmarkenverwaltung_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlmarkenverwaltung_domain_model_category.kategoriename">
+				<source>Kategoriename</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlmarkenverwaltung_domain_model_modehaus">
+				<source>Modehaus</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlmarkenverwaltung_domain_model_modehaus.haus">
+				<source>Haus</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlmarkenverwaltung_domain_model_modehaus.hausnummer">
+				<source>Hausnummer</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlmarkenverwaltung_domain_model_modehaus.categorys">
+				<source>Categorys</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

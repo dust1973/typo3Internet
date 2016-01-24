@@ -1,0 +1,46 @@
+
+<f:form action="show" object="{Question}" name="form" controller="Question"
+        additionalAttributes="{role:'form'}"  class="well">
+
+
+    <f:if condition="{settings.werbung}">
+    <f:then>
+        <p>Vielen Dank für die Beantwortung unserer Fragen!
+            Als Dankeschön für Ihre engagierte Teilnahme an unserer Befragung, schenken wir Ihnen zudem einen 5 €-Einkaufsgutschein.
+            Dieser Gutschein wird Ihnen an die von Ihnen angegebene e-Mail-Adresse "{email}" geschickt.
+            Drucken Sie sich diesen einfach aus und bringen Sie ihn bei Ihrem nächsten Einkauf in Ihrem WÖHRL Haus mit.
+            Wir wünschen Ihnen viel Spaß beim Shoppen!<br><br>
+            Ihr WÖHRL Team
+        </p>
+    </f:then>
+    <f:else>
+        <p>Tragen Sie bitte hier Ihre E-Mail Adresse ein, an die der 10 €-Gutschein geschickt werden soll. </p>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <input type="email" class="form-control" name="tx_woehrlonlinebefragung_pi1[email]" id="InputEmail" placeholder="Ihre E-Mail Adresse" >
+            </div></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="checkbox">
+                    <label>
+                        <f:form.checkbox name="werbung"  value="1"  />
+                        <small>Ja, ich möchte von WÖHRL* exklusive Angebote, Produktinformationen und Einladungen per E-Mail erhalten. Ich bin damit einverstanden, dass meine Daten zu Marketingzwecken erhoben, verarbeitet und genutzt werden. Das gilt auch für Informationen, bzgl. der Öffnung und des Lesens der E-Mail oder auch für Informationen darüber, dass Produkte oder Angebote in der E-Mail für mich besonders interessant waren. Diese Einwilligung, sowie das Einverständnis zum Erhalt von Angeboten, Produktinformationen und Einladungen per E-Mail kann jederzeit über www.woehrl.de für die Zukunft widerrufen werden. Selbstverständlich können Sie den Newsletter jeder Zeit wieder abbestellen!
+                        </small>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+        <f:form.hidden name="question" value="{question.uid}"/>
+        <button type="button" class="btn btn-primary" name="tx_woehrlonlinebefragung_pi1[absenden]"
+                onclick="submit(this.form);"> Absenden
+        </button><br><br>
+        <small>* Die zur Unternehmensgruppe Wöhrl gehörenden Unternehmen: Rudolf Wöhrl AG; Rudolf Wöhrl, das Haus der Markenkleidung GmbH & Co. KG; Wöhrl,
+            das Haus der Markenkleidung GmbH & Co. KG; Wöhrl, das Haus der Markenkleidung Rudolf Wöhrl GmbH & Co. KG; Textilhandels 40 GmbH; Wöhrl GmbH & Co. KG,
+            Center für Mode und Sport; Kaufhaus Wöhrl GmbH & Co. KG; Georg Völk GmbH & Co. KG; MV Mode- und Vertriebs GmbH;
+            No. 10 Mode GmbH & Co. KG; Wöhrl-net GmbH & Co. KG, Wöhrl 15 GmbH; Wöhrl 25 GmbH; U1 by Wöhrl GmbH, sowie Nadel & Zwirn GmbH.
+        </small>
+   </f:else>
+</f:if>
+    </f:form>

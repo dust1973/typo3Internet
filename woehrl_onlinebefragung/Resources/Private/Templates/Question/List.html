@@ -1,0 +1,94 @@
+{namespace n= WOEHRL\WoehrlOnlinebefragung\ViewHelpers}
+<f:layout name="Default"/>
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <f:flashMessages renderMode="div"/>
+
+    <n:includeFile path="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <n:includeFile path="EXT:woehrl_onlinebefragung/Resources/Public/Css/star-rating.css"/>
+    <n:includeFile path="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
+    <n:includeFile path="EXT:woehrl_onlinebefragung/Resources/Public/Javascript/star-rating.js"/>
+
+
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{question.prozenterledigt}" aria-valuemin="0" aria-valuemax="100" style="width: {question.prozenterledigt}%">
+           {question.prozenterledigt}%
+        </div>
+    </div>
+    <f:if condition="{question.prozenterledigt} < 20">
+        <div class="well">
+            <h3>IHRE MEINUNG IST UNS WICHTIG!</h3><p>
+            Wir würden uns freuen, wenn Sie uns einige Fragen zu Ihrem letzten Einkauf in Ihrem WÖHRL Haus beantworten. Die Beantwortung der Fragen wird ca. 5-7 Minuten dauern.
+            Ihr Feedback hilft uns dabei, unser Angebot und unseren Service immer weiter zu verbessern. Für die Teilnahme an der Online-Befragung haben Sie 3 Wochen Zeit, danach steht Ihnen Ihr persönlicher Link nicht mehr zur Verfügung.
+            <br><br> Vielen Dank für Ihre Teilnahme!<br>
+            Ihr WÖHRL Team
+        </p>
+            </div>
+    </f:if>
+    <f:if condition="{question.typ} == 6">
+        <f:then>
+            <f:render partial="Question/Abschluesstext"
+                      arguments="{question: question,settings:settings, uid:uid, email:email}"/>
+        </f:then>
+        <f:else>
+            <f:render partial="Question/Fragen"
+                      arguments="{question: question,settings:settings, uid:uid}"/>
+        </f:else>
+    </f:if>
+
+    <script>
+        jQuery(document).ready(function () {
+
+            $('#rating-input').rating({
+                min: 0,
+                max: 5,
+                step: 1,
+                size: 'lg',
+                showClear: false
+            });
+
+            $('#btn-rating-input').on('click', function () {
+                $('#rating-input').rating('refresh', {
+                    showClear: true,
+                    disabled: true
+                });
+            });
+
+
+            $('.btn-danger').on('click', function () {
+                $("#kartik").rating('destroy');
+            });
+
+            $('.btn-success').on('click', function () {
+                $("#kartik").rating('create');
+            });
+
+            $('#rating-input').on('rating.change', function () {
+                alert($('#rating-input').val());
+            });
+
+
+            $('.rb-rating').rating({
+                'showCaption': true,
+                'stars': '3',
+                'min': '0',
+                'max': '3',
+                'step': '1',
+                'size': 'xs',
+                'starCaptions': {0: 'status:nix', 1: 'status:wackelt', 2: 'status:geht', 3: 'status:laeuft'}
+            });
+        });
+    </script>
+</f:section>

@@ -1,0 +1,85 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+    <f:if condition="{Newsletter.meldung}">
+        <f:then>
+            <f:switch expression="{Newsletter.meldung}">
+                <f:case value="2">
+                   <h3>Ihre E-Mail-Adresse wurde aus unserem Newsletter-Verteiler entfernt, in Zukunft werden Sie keine E-Mails mehr erhalten.</h3>
+                    <h3>Herzlichst Ihr <br /><br />WÖHRL Kundenservice <br />Rudolf Wöhrl AG <br />Tel.: 0911 - 8121 111* <br />E-Mail: stylecard@woehrl.de </h3>
+                    <p>*Verbindungspreis entspricht Preis aus dem deutschen Festnetz. Mobilfunkpreis ggf. abweichend.</p>
+                </f:case>
+                <f:case value="default">
+                    <div class="alert alert-danger" role="alert">
+                        Der Dienst zur zeit nicht Verfügbar, versuchen Sie es später noch einmal.
+                    </div>
+                </f:case>
+            </f:switch>
+        </f:then>
+        <f:else>
+
+<!--f:debug>{_all}</f:debug-->
+    <f:flashMessages renderMode="div"/>
+
+    <f:render partial="Error" section="Main"  />
+    <!--f:form method="post" action="form" controller="Newsletter" name="Newsletter"   additionalAttributes="{role:'form'}" -->
+            <h3 style="padding:10px 0;">
+                <p>Schade, dass Sie unseren Newsletter nicht mehr empfangen möchten. Sie können sich jederzeit wieder für unseren Newsletter-Service anmelden. Um unseren Service weiter an Ihre Bedürfnisse anpassen zu können, möchten wir Sie bitten kurz freiwillig die folgende Frage zu beantworten.</p>
+            </h3>
+        <f:form action="{action}" object="{Newsletter}" name="Newsletter" controller="Newsletter"
+                additionalAttributes="{role:'form'}">
+            <div class="row">
+                <div class="col-md-12  col-sm-12">
+                    <h3>Warum möchten Sie sich vom Newsletter abmelden? </h3>
+                    <div class="form-group">
+                        <div class="col-md-12 col-sm-12">
+
+                            <div class="checkbox">
+                                <label><f:form.checkbox  value="1" /> Die Frequenz des Newsletters war mir zu hoch</label>
+                            </div>
+                            <div class="checkbox">
+                                <label ><f:form.checkbox value="1" /> Die Inhalte waren zu wenig auf mich zugeschnitten</label>
+                                </div>
+                            <div class="checkbox">
+                                <label ><f:form.checkbox  value="1" /> Die Inhalte waren nicht interessant</label>
+                                </div>
+                            <div class="checkbox">
+                                <label ><f:form.checkbox  value="1" /> Ich melde mich nur vorübergehend ab, komme aber wieder</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6  col-sm-12">
+                    <div class="form-group">
+                            <h3>Ihre Anregungen, Kritik, Ideen</h3>
+                            <f:form.textarea class="form-control" rows="5" name="nachricht" />
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+            <hr />
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                        <h3><label for="email">E-Mail*</label></h3>  <f:form.textfield class="required form-control"  property="email" size="40"  value="{email}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                            <f:form.submit name="submit" class="btn btn-primary" value="Newsletter abbestellen" />
+                    </div>
+                </div>
+            </div>
+        </f:form>
+        </f:else>
+    </f:if>
+
+</f:section>

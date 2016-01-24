@@ -1,0 +1,116 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    144,
+                    168
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": [
+
+                    ]
+                },
+                "name": "Filiale",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "Filiale",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "503481502954"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "name",
+                            "propertyType": "String",
+                            "uid": "1106175946327"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "adresse",
+                            "propertyType": "Text",
+                            "uid": "584224197417"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+
+                    ]
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "Jetzt Ihre W\u00d6HRL Filiale finden!",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\nextbase => 6.2\nfluid => 6.2",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": "2.1.0"
+        },
+        "extensionKey": "woehrl_filialsuche",
+        "name": "W\u00d6HRL Filialsuche",
+        "originalExtensionKey": "woehrl_filialsuche",
+        "persons": [
+            {
+                "company": "Rudolf W\u00d6HRL AG",
+                "email": "alexander.fuchs@woehrl.de",
+                "name": "Alexander Fuchs",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Filiale =>list, show",
+                    "noncacheableActions": "Filiale =>list, show",
+                    "switchableActions": ""
+                },
+                "key": "pi2",
+                "name": "W\u00d6HRL Filialsuche"
+            }
+        ],
+        "vendorName": "Woehrl"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2015-01-30 11:57",
+        "extension_builder_version": "6.2.0",
+        "be_user": "Alexander Fuchs (1)"
+    }
+}

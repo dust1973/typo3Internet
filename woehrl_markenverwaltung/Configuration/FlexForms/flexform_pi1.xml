@@ -1,0 +1,89 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Optionen</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<!--switchableControllerActions>
+						<TCEforms>
+							<label>Select function</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">List</numIndex>
+										<numIndex index="1">Marke->list</numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">Single</numIndex>
+										<numIndex index="1">Marke->show</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">Admin</numIndex>
+										<numIndex index="1">Marke->list;Marke->show;Marke->new;Marke->create;Marke->edit;Marke->update</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions-->
+					<settings.markenverwaltung>
+						<TCEforms>
+							<label>Ansicht</label>
+							<onChange>reload</onChange>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">Categorys</numIndex>
+										<numIndex index="1">0</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Modehäuser</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.markenverwaltung>
+					<settings.category>
+						<TCEforms>
+							<displayCond>FIELD:settings.markenverwaltung:REQ:FALSE</displayCond>
+							<label>Bitte Category auswählen</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+								</items>
+								<foreign_table>tx_woehrlmarkenverwaltung_domain_model_category</foreign_table>
+								<foreign_table_where> ORDER BY tx_woehrlmarkenverwaltung_domain_model_category.kategoriename </foreign_table_where>
+							</config>
+						</TCEforms>
+					</settings.category>
+					<settings.modehaus>
+						<TCEforms>
+							<displayCond>FIELD:settings.markenverwaltung:REQ:TRUE</displayCond>
+							<label>Bitte Modehaus auswählen</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+								</items>
+								<foreign_table>tx_woehrlmarkenverwaltung_domain_model_modehaus</foreign_table>
+								<foreign_table_where> ORDER BY tx_woehrlmarkenverwaltung_domain_model_modehaus.haus</foreign_table_where>
+							</config>
+						</TCEforms>
+					</settings.modehaus>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

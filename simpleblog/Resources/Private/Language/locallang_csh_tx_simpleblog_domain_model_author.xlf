@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-08-24T08:48:12Z" product-name="simpleblog">
+		<header/>
+		<body>
+
+			<trans-unit id="fullname.description">
+				<source>This is the complete name of the author</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>This is the email address of the author</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

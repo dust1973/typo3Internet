@@ -1,0 +1,40 @@
+{
+    "modules": [
+
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": ""
+        },
+        "extensionKey": "woehrl_be_loginskin",
+        "name": "Cretection Backend Login Skin",
+        "originalExtensionKey": "",
+        "persons": [
+
+        ],
+        "plugins": [
+
+        ],
+        "vendorName": "WOEHRL"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2015-02-17 12:09",
+        "extension_builder_version": "6.2.0",
+        "be_user": "Alexander Fuchs (1)"
+    }
+}

@@ -1,0 +1,115 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+
+
+<f:section name="main">
+	<script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+	<script type="text/javascript" src="typo3conf/ext/woehrl_filialsuche/Resources/Public/JavaScript/OpenLayers.js"></script>
+	<script type="text/javascript" src="typo3conf/ext/woehrl_filialsuche/Resources/Public/JavaScript/OpenStreetMap.js"></script>
+	<script type="text/javascript" src="typo3conf/ext/woehrl_filialsuche/Resources/Public/JavaScript/panZoomBar.js"></script>
+	<link href="typo3conf/ext/woehrl_filialsuche/Resources/Public/Css/openlayer.css" rel="stylesheet" type="text/css" media="screen">
+
+<f:flashMessages renderMode="div" />
+
+	<f:if condition="{settings.filialenKarte} == 0">
+		<f:then>
+			<f:render partial="List/FilialFinder" />
+		</f:then>
+		<f:else>
+			<f:render partial="List/FilialenKarte" />
+		</f:else>
+	</f:if>
+
+
+	<script defer="defer" type="text/javascript">
+		<f:if condition="{filiale.lon_pos}">
+		<f:then>
+		var lon = {filiale.lon_pos};
+		</f:then>
+		<f:else>
+		var lon = {settings.lon_pos};
+		</f:else>
+		</f:if>
+		<f:if condition="{filiale.lat_pos}">
+		<f:then>
+		var lat = {filiale.lat_pos};
+		</f:then>
+		<f:else>
+		var lat = {settings.lat_pos};
+		</f:else>
+		</f:if>
+		<f:if condition="{filiale.zoom}">
+		<f:then>
+		var zoom = {filiale.zoom};
+		</f:then>
+		<f:else>
+		var zoom = {settings.zoom};
+		</f:else>
+		</f:if>
+
+		var layer;
+		var map; //complex object of type OpenLayers.Map
+		OpenLayers.Lang.setCode("de");
+		OpenLayers.Popup.WIDTH = 250;
+		OpenLayers.Popup.HEIGHT = 220;
+
+		OpenLayers.ImgPath =  "./typo3conf/ext/woehrl_filialsuche/Resources/Public/Images/themes/dark/";
+
+
+		map = new OpenLayers.Map("map", {
+			controls: [
+				new OpenLayers.Control.Navigation(),
+				new OpenLayers.Control.Attribution()
+
+			],
+			maxExtent:new OpenLayers.Bounds(-20037508.34,-20037508.34, 20037508.34, 20037508.34),
+			numZoomLevels: 19,
+			maxResolution: 156543,
+			units: "m"
+		} );
+
+		map.addLayer(new OpenLayers.Layer.OSM(
+			{numZoomLevels: 20}
+		));
+
+		/*map.addLayer(new OpenLayers.Layer.Google(
+				"Google Streets", // the default
+				{numZoomLevels: 20}
+		));*/
+
+		var panZoomBar = new OpenLayers.Control.PanZoom()
+		map.addControl(panZoomBar);
+
+		var lonLat = new OpenLayers.LonLat(lon ,lat )
+				.transform(
+				new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+				map.getProjectionObject() // to Spherical Mercator Projection
+		);
+		map.setCenter (lonLat, zoom);
+
+		var newl = new OpenLayers.Layer.Text( "WÖHRL Filialen",
+				{
+					location:"typo3conf/ext/woehrl_filialsuche/Resources/Public/filiallen.txt",
+					projection: map.displayProjection
+				});
+		map.addLayer(newl);
+		var size = new OpenLayers.Size(136,59);
+		var offset = new OpenLayers.Pixel(-10, -size.h);
+
+		$(".baseLbl").html("Grundkarten");
+	</script>
+
+<div class="baseLbl"></div>
+</f:section>

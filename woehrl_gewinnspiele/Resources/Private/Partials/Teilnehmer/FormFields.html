@@ -1,0 +1,182 @@
+<h2>{gewinnspiel.name}</h2>
+<div class="row ">
+    <div class="col-md-12">
+        <f:if condition="{gewinnspiel.titlebild}">
+            <f:then>
+                <f:image  src="{gewinnspiel.titlebild.uid}" class="img-responsive" alt="" treatIdAsReference="TRUE" />
+            </f:then>
+            <f:else>
+                <f:image class="img-thumbnail" src="{settings.displayList.imageNotFound}" alt="Image not found" />
+            </f:else>
+        </f:if>
+    </div>
+</div>
+<div class="clearfix visible-sm-block visible-xs-block visible-md-block visible-lg-block"></div>
+<div class="row">
+    <div class="col-md-12">
+        <f:format.html>{gewinnspiel.teasertext}</f:format.html>
+    </div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+
+
+
+
+<hr />
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="anrede">Anrede*</label>
+
+            <div class="col-md-6 col-sm-8">
+                <f:form.select property="gender" value="{newTeilnehmende.gender}" class="form-control" id="anrede" options="{1: 'Herr', 2: 'Frau'}" prependOptionLabel="--Bitte wählen--" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="titel">Titel</label>
+
+            <div class="col-md-6 col-sm-8">
+
+                <f:form.select  property="title" value="{newTeilnehmende.title}" class="form-control" id="title"
+                                options="{
+                                       A: 'Bachelor',
+                                       B: 'Baron',
+                                       4: 'Dipl. Ing.',
+                                       3: 'Dipl. Kfm.',
+                                       5: 'Direktor',
+                                       1: 'Dr.',
+                                       8: 'Dr. med.',
+                                       D: 'Graf',
+                                       C: 'Gräfin',
+                                       6: 'Ing.',
+                                       7: 'Magister',
+                                       2: 'Prof.',
+                                       9: 'Prof. Dr.'
+                                       }"
+                                prependOptionLabel="--Bitte wählen--" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+
+<div class="row">
+    <div class="col-md-6  col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="firstname">Vorname*</label>
+
+            <div class="col-md-9 col-sm-8">
+                <f:form.textfield class="required form-control" property="firstname" size="40"  value="{newTeilnehmende.firstname}" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6  col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="lastname">Nachname*</label>
+
+            <div class="col-md-9 col-sm-8">
+                <f:form.textfield class="required form-control"  property="lastname" size="40" value="{newTeilnehmende.lastname}" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="zip">PLZ*</label>
+
+            <div class="col-md-4 col-sm-4">
+                <f:form.textfield class="required form-control" property="zip" type="number" maxlength="5"  value="{newTeilnehmende.zip}" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="city">Wohnort</label>
+
+            <div class="col-md-9 col-sm-8">
+                <f:form.textfield class="form-control" property="city"  value="{newTeilnehmende.city}" />
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="address">Str. / Nr.</label>
+            <div class="col-md-9 col-sm-8">
+                <f:form.textfield class="required form-control"  property="address" size="40"  value="{newTeilnehmende.address}" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="email">E-Mail*</label>
+            <div class="col-md-9 col-sm-8">
+                <f:form.textfield class="required form-control"  property="email" size="40"  value="{newTeilnehmende.email}" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+
+<f:if condition="{gewinnspiel.description}">
+
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-4" for="loesungswort">Lösungswort</label>
+            <div class="col-md-9 col-sm-8">
+                <f:form.textfield class="form-control"  size="40"  maxlength="11"  />
+            </div>
+        </div>
+    </div>
+
+</div>
+</f:if>
+<hr>
+<div class="row">
+    <div class="col-md-3 col-sm-3" >
+        <img src="http://www.woehrl.de/fileadmin/user_upload/Gewinnspiele/newsletter.png"  />
+
+    </div>
+
+    <div class="col-md-9 col-sm-9" >
+
+        <label>
+
+            <f:form.checkbox property="werbung"  checked="{newTeilnehmende.werbung}" style="height:15px;width:15px;" value="1" />
+        </label>
+
+        Ja, ich möchte von WÖHRL* exklusive Angebote, Produktinformationen und Einladungen per Brief oder E-Mail erhalten. Ich bin damit einverstanden, dass genannte Angaben zu eigenen und Marketingzwecken erhoben, verarbeitet und genutzt werden...
+        <button type="button"  class="btn btn-primary btn-xs " data-container="body" data-toggle="popover"
+                data-placement="top"
+                data-content="<span style='font-size:12px;'> Zur Versendung von Informationen per Post oder E-Mail werden die notwendigen Daten fallweise durch beauftragte Dienstleistungsunternehmen verarbeitet (Auftragsdatenverarbeiter).
+							Unmittelbar nach Durchführung der Aktion werden Ihre Daten dort gelöscht.
+							<br /><br /> Diese Einwilligung sowie das Einverständnis zum Erhalt von Angeboten, Produktinformationen und Einladungen per Brief oder E-Mail kann jederzeit über den WÖHRL Kundenservice, Lina-Ammon-Str. 10, 90471 Nürnberg per Post oder über www.woehrl.de per E-Mail für die Zukunft widerrufen werden.<br />
+							*Die zur Unternehmensgruppe WÖHRL gehörenden Unternehmen: Rudolf Wöhrl, das Haus der Markenkleidung GmbH & Co. KG; WÖHRL, das Haus der Markenkleidung GmbH & Co. KG; WÖHRL, das Haus der Markenkleidung Rudolf Wöhrl GmbH & Co. KG; Textilhandels-40 GmbH; WÖHRL GmbH & Co. KG, Center für Mode und Sport; Kaufhaus Wöhrl GmbH & Co. KG; Georg Völk GmbH & Co. KG; MV Mode- und Vertriebs GmbH; No. 10 Mode GmbH & Co. KG; WÖHRL-net GmbH & Co. KG; WÖHRL-15 GmbH; U-eins by WÖHRL GmbH sowie Nadel und Zwirn GmbH.">
+            Weiterlesen
+        </button>
+		<br /><br />
+	                          **{gewinnspiel.teilnahmebedingungen} 
+
+
+    </div>
+
+</div>
+<div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+<div class="row">
+    <div class="col-md-4 col-sm-12" >
+        <p>
+            <f:form.submit name="submit" class="btn btn-primary btn-lg" value="Jetzt teilnehmen!" />
+
+        </p>
+    </div>
+</div>

@@ -1,0 +1,159 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+
+
+
+
+    <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+    <script type="text/javascript" src="typo3conf/ext/woehrl_filialsuche/Resources/Public/JavaScript/OpenLayers.js"></script>
+    <script type="text/javascript" src="typo3conf/ext/woehrl_filialsuche/Resources/Public/JavaScript/OpenStreetMap.js"></script>
+    <script type="text/javascript" src="typo3conf/ext/woehrl_filialsuche/Resources/Public/JavaScript/panZoomBar.js"></script>
+    <link href="typo3conf/ext/woehrl_filialsuche/Resources/Public/Css/openlayer.css" rel="stylesheet" type="text/css" media="screen">
+<f:flashMessages renderMode="div" />
+
+    <div id="map" class="olMap" style="height:380px !important;"></div>
+
+
+
+    <h1>WÖHRL Filialsuche</h1>
+    <hr />
+    <f:if condition="{filiale.modehaeuser} == 2">
+        <f:then>
+
+            <div style="padding:10px;">
+                <p class="text-danger">Bitte geben Sie Ihre Postleitzahl ein!</p>
+                <f:form action="show"  name="filiale" object="{filiales}" class="form-inline">
+                    <div class="form-group">
+                        <label for="exampleInputPlz">Bitte geben Sie Ihre PLZ ein</label>
+                        <f:form.textfield property="plz" class="form-control plz" id="exampleInputPlz" maxlength="5"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Umkreis</label>
+                        <f:form.select property="radius" id="radius" class="form-control"
+                                       optionLabelField="radius" options="{25: '25 km', 50: '50 km', 100: '100 km'}"/>
+                    </div>
+                    <div class="form-group">
+                        <f:form.submit value="Filiale suchen" class="btn btn-primary"/>
+                    </div>
+                </f:form>
+                <p></p>
+            </div>
+        </f:then>
+        <f:else>
+            <f:if condition="{filiale.modehaeuser}">
+                <f:then>
+                    <table class="table ">
+                        <tr>
+                            <th style="background-color: #fff;" width="25%">Name</th>
+                            <th style="background-color: #fff;">Adresse</th>
+                            <th style="background-color: #fff;">Entfernung</th>
+                            <th></th>
+                        </tr>
+                    <f:for each="{filiale.modehaeuser}" as="modehaus" iteration="itemIteration">
+                        <tr>
+                            <td><span class="glyphicon glyphicon-home"></span>&nbsp;{modehaus.name}</td>
+                            <td>{modehaus.adresse}</td>
+                            <td><span class="glyphicon glyphicon-road"></span> <f:format.number decimals="2" decimalSeparator="." thousandsSeparator=",">{modehaus.distance}</f:format.number> km</td>
+                            <td><a class="btn btn-primary btn-sm" href="./modehaeuser/{modehaus.url}.html" alt="{modehaus.name}"><span class="glyphicon glyphicon-share-alt"></span> Zur Filiale</a></td>
+                        </tr>
+                    </f:for>
+                        </table>
+                </f:then>
+                <f:else>
+                    <p class="text-danger">Leider wurde keine Filiale zu Ihren Sucheingaben gefunden.</p>
+                </f:else>
+            </f:if>
+        </f:else>
+    </f:if>
+
+    <script defer="defer" type="text/javascript">
+        <f:if condition="{filiale.lon_pos}">
+           <f:then>
+                var lon = {filiale.lon_pos};
+        </f:then>
+        <f:else>
+            var lon = {settings.lon_pos};
+        </f:else>
+        </f:if>
+        <f:if condition="{filiale.lat_pos}">
+        <f:then>
+        var lat = {filiale.lat_pos};
+        </f:then>
+        <f:else>
+        var lat = {settings.lat_pos};
+        </f:else>
+        </f:if>
+        <f:if condition="{filiale.zoom}">
+        <f:then>
+        var zoom = {filiale.zoom};
+        </f:then>
+        <f:else>
+        var zoom = {settings.zoom};
+        </f:else>
+        </f:if>
+
+        var layer;
+        var map; //complex object of type OpenLayers.Map
+        OpenLayers.Lang.setCode("de");
+        OpenLayers.Popup.WIDTH = 250;
+        OpenLayers.Popup.HEIGHT = 220;
+
+        OpenLayers.ImgPath =  "./typo3conf/ext/woehrl_filialsuche/Resources/Public/Images/themes/dark/";
+
+
+        map = new OpenLayers.Map("map", {
+            controls: [
+                new OpenLayers.Control.Navigation(),
+                new OpenLayers.Control.Attribution()
+
+            ],
+            maxExtent:new OpenLayers.Bounds(-20037508.34,-20037508.34, 20037508.34, 20037508.34),
+            numZoomLevels: 19,
+            maxResolution: 156543,
+            units: "m"
+        } );
+
+        /*map.addLayer(new OpenLayers.Layer.OSM());*/
+
+        map.addLayer(new OpenLayers.Layer.Google(
+                "Google Streets", // the default
+                {numZoomLevels: 20}
+        ));
+
+        var panZoomBar = new OpenLayers.Control.PanZoom()
+        map.addControl(panZoomBar);
+
+        var lonLat = new OpenLayers.LonLat(lon ,lat )
+                .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+        );
+        map.setCenter (lonLat, zoom);
+
+        var newl = new OpenLayers.Layer.Text( "WÖHRL Filialen",
+                {
+                    location:"typo3conf/ext/woehrl_filialsuche/Resources/Public/filiallen.txt",
+                    projection: map.displayProjection
+                });
+        map.addLayer(newl);
+        var size = new OpenLayers.Size(136,59);
+        var offset = new OpenLayers.Pixel(-10, -size.h);
+
+        $(".baseLbl").html("Grundkarten");
+    </script>
+
+</f:section>

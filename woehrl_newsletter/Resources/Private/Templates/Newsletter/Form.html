@@ -1,0 +1,229 @@
+<f:layout name="Default"/>
+
+<f:section name="main">
+    <f:if condition="{Newsletter.meldung}">
+        <f:then>
+            <f:switch expression="{Newsletter.meldung}">
+                <f:case value="2">
+                    <h2>Vielen Dank für Ihre Anmeldung zum WÖHRL Newsletter!</h2>
+
+                    <h3>In Kürze erhalten Sie eine Begrüßungs-E-Mail.
+                        Bitte folgen Sie dem darin angegebenen Link. Dadurch stellen wir sicher, dass Sie den Newsletter
+                        persönlich bestellt haben.
+                        Erst durch die Bestätigung der E-Mail sind Sie für den Newsletter registriert und erhalten als
+                        Dankeschön einen 5€-Gutschein per E-Mail geschickt.</h3>
+
+                    <h3>Mit dem WÖHRL Newsletter sind Sie immer bestens informiert!</h3>
+
+                    <h3>Herzlichst Ihr <br/><br/>WÖHRL Kundenservice <br/>Rudolf Wöhrl AG <br/>Tel.: 0911 - 8121 111*
+                        <br/>E-Mail: stylecard@woehrl.de </h3>
+
+                    <p>*Verbindungspreis entspricht Preis aus dem deutschen Festnetz. Mobilfunkpreis ggf. abweichend.</p>
+                </f:case>
+                <f:case value="default">
+                    <div class="alert alert-danger" role="alert">
+                        Der Dienst zur zeit nicht Verfügbar, versuchen Sie es später noch einmal.
+                    </div>
+                </f:case>
+            </f:switch>
+        </f:then>
+        <f:else>
+
+            <!--f:debug>{_all}</f:debug-->
+            <f:flashMessages renderMode="div"/>
+<!--f:debug>{_all}</f:debug-->
+            <f:render partial="Error" section="Main"/>
+            <!--f:form method="post" action="form" controller="Newsletter" name="Newsletter"   additionalAttributes="{role:'form'}" -->
+
+            <f:form action="{action}" object="{Newsletter}" name="Newsletter" controller="Newsletter"
+                    additionalAttributes="{role:'form'}" class="well">
+                <div class="row">
+                    <div class="col-md-12  col-sm-12">
+                        <p style="padding:10px 0;">
+                            Die mit * gekennzeichneten Felder sind Pflichtfelder!
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12  col-sm-12">
+                        <div class="form-group">
+                            <h4 class="col-md-12 col-sm-12" for="vorname">Informieren Sie mich bitte über WÖHRL Mode
+                                für</h4>
+
+                            <div class="col-md-12 col-sm-12">
+                                <label class="checkbox-inline">
+                                    <f:form.checkbox property="damenmode" value="1"/>
+                                    Damenmode</label>
+                                <label class="checkbox-inline">
+                                    <f:form.checkbox property="herrenmode" value="1"/>
+                                    Herrenmode</label>
+                                <label class="checkbox-inline">
+                                    <f:form.checkbox property="kindermode" value="1"/>
+                                    Kindermode</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-4" for="anrede">Anrede*</label>
+
+                            <div class="col-md-6 col-sm-8">
+                                <f:form.select name="anrede" property="anrede" class="form-control" id="anrede"
+                                               options="{1: 'Herr', 2: 'Frau'}" prependOptionLabel="--Bitte wählen--"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-4" for="titel">Titel</label>
+
+                            <div class="col-md-6 col-sm-8">
+
+                                <f:form.select name="titel" property="titel" class="form-control" id="titel"
+                                               options="{
+                                       A: 'Bachelor',
+                                       B: 'Baron',
+                                       4: 'Dipl. Ing.',
+                                       3: 'Dipl. Kfm.',
+                                       5: 'Direktor',
+                                       1: 'Dr.',
+                                       8: 'Dr. med.',
+                                       D: 'Graf',
+                                       C: 'Gräfin',
+                                       6: 'Ing.',
+                                       7: 'Magister',
+                                       2: 'Prof.',
+                                       9: 'Prof. Dr.'
+                                       }"
+                                               prependOptionLabel="--Bitte wählen--"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+                <div class="row">
+                    <div class="col-md-6  col-sm-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-4" for="vorname">Vorname*</label>
+
+                            <div class="col-md-9 col-sm-8">
+                                <f:form.textfield class="required form-control" property="vorname" size="40"
+                                                  value="{vorname}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6  col-sm-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-4" for="vorname">Nachname*</label>
+
+                            <div class="col-md-9 col-sm-8">
+                                <f:form.textfield class="required form-control" property="nachname" size="40"
+                                                  value="{nachname}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-4" for="plz">PLZ*</label>
+
+                            <div class="col-md-4 col-sm-4">
+                                <f:form.textfield class="required form-control" property="plz" type="number"
+                                                  maxlength="5" value="{plz}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-4" for="kundennummer">Kundennummer</label>
+
+                            <div class="col-md-4 col-sm-4">
+                                <f:form.textfield class="required form-control" property="kundennummer" type="number"
+                                                  value="{kundennummer}"/>
+                            </div>
+
+                            <label class="col-md-4 col-sm-4" for="falls_vorhanden">(falls vorhanden)</label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-4" for="email">E-Mail*</label>
+
+                            <div class="col-md-9 col-sm-8">
+                                <f:form.textfield class="required form-control" name="email" property="email" size="40"
+                                                  value="{email}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+                <div class="row">
+
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-9 col-sm-9">
+                        <label>
+                            <f:form.checkbox property="werbung" style="height:15px;width:15px;" value="1"/>
+                            <b>*Ja</b>, ich möchte von WÖHRL** exklusive Angebote, Produktinformationen und Einladungen
+                            per E-Mail erhalten.
+                            Ich bin damit einverstanden, dass meine Daten zu Marketingzwecken erhoben, verarbeitet und
+                            genutzt werden.
+                            Das gilt auch für Informationen, ob ich das E-Mail geöffnet und gelesen habe und welche
+                            Produkte oder Angebote im E-Mail für mich besonders interessant waren.
+                            Diese Einwilligung, sowie das Einverständnis zum Erhalt von Angeboten, Produktinformationen
+                            und Einladungen per E-Mail kann jederzeit über www.woehrl.de für die Zukunft widerrufen
+                            werden.
+                            Selbstverständlich können Sie den Newsletter jeder Zeit wieder abbestellen!
+
+                        </label>
+
+                    </div>
+
+                </div>
+                <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <p>
+                            <f:form.submit name="submit" class="btn btn-primary btn-lg" value="Newsletter abonnieren"/>
+                        </p>
+                    </div>
+                </div>
+                <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                <small>** Die zur Unternehmensgruppe Wöhrl gehörenden Unternehmen:
+                    Rudolf Wöhrl AG; Rudolf Wöhrl, das Haus der Markenkleidung GmbH & Co. KG; Wöhrl,
+                    das Haus der Markenkleidung GmbH & Co. KG; Wöhrl, das Haus der Markenkleidung Rudolf Wöhrl GmbH &
+                    Co. KG;
+                    Textilhandels 40 GmbH; Wöhrl GmbH & Co. KG, Center für Mode und Sport; Kaufhaus Wöhrl GmbH & Co. KG;
+                    Georg Völk GmbH & Co. KG;
+                    MV Mode- und Vertriebs GmbH; No. 10 Mode GmbH & Co. KG; Wöhrl-net GmbH & Co. KG, Wöhrl 15 GmbH;
+                    Wöhrl 25 GmbH;
+                    U1 by Wöhrl GmbH, sowie Nadel & Zwirn GmbH.
+                </small>
+                        </div>
+                    </div>
+                <div class="clearfix visible-sm-block visible-md-block visible-lg-block"></div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <h3>Sie sind bereits registriert?</h3>
+                        <f:link.page pageUid="141" class="btn btn-primary">Newsletter abbestellen</f:link.page>
+                    </div>
+                </div>
+            </f:form>
+        </f:else>
+    </f:if>
+
+</f:section>

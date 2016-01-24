@@ -1,0 +1,98 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    150,
+                    220
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": [
+                        "form",
+                        "subscribe"
+                    ]
+                },
+                "name": "Newsletter",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "Newsletter",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "128229032787"
+                },
+                "propertyGroup": {
+                    "properties": [
+
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+
+                    ]
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "Spezialanwendung zur Beantragung von W\u00d6HRL stylecard",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": ""
+        },
+        "extensionKey": "woehrl_newsletter",
+        "name": "W\u00d6HRL stylecard Onlineantrag",
+        "originalExtensionKey": "woehrl_newsletter",
+        "persons": [
+            {
+                "company": "Rudolf W\u00d6HRL AG",
+                "email": "alexander.fuchs@woehrl.de",
+                "name": "Alexander Fuchs",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Newsletter => form, subscribe\n",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "key": "pi1",
+                "name": "woehrl_newsletter"
+            }
+        ],
+        "vendorName": "WOEHRL"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2015-02-12 10:11",
+        "extension_builder_version": "6.2.0",
+        "be_user": "Alexander Fuchs (1)"
+    }
+}

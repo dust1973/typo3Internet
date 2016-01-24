@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-07-06T10:30:31Z" product-name="woehrl_onlinebefragung">
+		<header/>
+		<body>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question">
+				<source>Question</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.typ">
+				<source>Typ</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.answer1">
+				<source>Answer1</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.nextquestion1">
+				<source>Nextquestion1</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.correct1">
+				<source>Correct1</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.answer2">
+				<source>Answer2</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.nextquestion2">
+				<source>Nextquestion2</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.correct2">
+				<source>Correct2</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.answer3">
+				<source>Answer3</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.nextquestion3">
+				<source>Nextquestion3</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.correct3">
+				<source>Correct3</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.answer4">
+				<source>Answer4</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.nextquestion4">
+				<source>Nextquestion4</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.correct4">
+				<source>Correct4</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.answer5">
+				<source>Answer5</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.nextquestion5">
+				<source>Nextquestion5</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.correct5">
+				<source>Correct5</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.relation">
+				<source>Relation</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_question.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_category.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_relation">
+				<source>Relation</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlonlinebefragung_domain_model_relation.userid">
+				<source>Userid</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

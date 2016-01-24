@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	  xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<head>
+	<title>Partials: Error</title>
+</head>
+<body>
+<f:section name="Main">
+	<f:form.validationResults for="{object}">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="alert alert-danger">
+				<f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+					{propertyPath}
+					<ul>
+						<f:for each="{errors}" as="error">
+							<li>
+								{error} | {error.code} |
+								<f:translate key="arguments"/>
+								:
+								<f:for each="{error.arguments}" as="argument">{argument},</f:for>
+							</li>
+						</f:for>
+					</ul>
+				</f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+</f:section>
+</body>
+</html>

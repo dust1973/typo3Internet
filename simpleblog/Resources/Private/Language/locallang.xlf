@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-08-24T08:48:12Z" product-name="simpleblog">
+		<header/>
+		<body>
+
+			<trans-unit id="heading_bloglist">
+				<source>Blog Listing</source>
+			</trans-unit>
+			<trans-unit id="heading_create_blog">
+				<source>Create a new blog</source>
+			</trans-unit>
+			<trans-unit id="heading_create_post">
+				<source>Create a new post</source>
+			</trans-unit>
+			<trans-unit id="heading_delete_blog">
+				<source>Delete blog</source>
+			</trans-unit>
+			<trans-unit id="heading_delete_post">
+				<source>Delete post</source>
+			</trans-unit>
+			<trans-unit id="heading_update_blog">
+				<source>Update blog</source>
+			</trans-unit>
+			<trans-unit id="heading_update_post">
+				<source>Update post</source>
+			</trans-unit>
+			<trans-unit id="heading_blog_show">
+				<source>Show Blog</source>
+			</trans-unit>
+			<trans-unit id="heading_post_show">
+				<source>Show Post (Blog %1$s)</source>
+			</trans-unit>
+			<trans-unit id="button_new_blog">
+				<source>create new blog</source>
+			</trans-unit>
+			<trans-unit id="button_new_post">
+				<source>create new post</source>
+			</trans-unit>
+			<trans-unit id="button_update_blog">
+				<source>update blog</source>
+			</trans-unit>
+			<trans-unit id="button_new_post">
+				<source>create new post</source>
+			</trans-unit>
+			<trans-unit id="button_update_post">
+				<source>update post</source>
+			</trans-unit>
+			<trans-unit id="button_delete_confirm_yes">
+				<source>Yes, delete!</source>
+			</trans-unit>
+			<trans-unit id="button_delete_confirm_no">
+				<source>No, don't delete</source>
+			</trans-unit>
+			<trans-unit id="button_blog_show">
+				<source>SHOW</source>
+			</trans-unit>
+			<trans-unit id="button_blog_update">
+				<source>EDIT</source>
+			</trans-unit>
+			<trans-unit id="button_blog_delete">
+				<source>DELETE</source>
+			</trans-unit>
+			<trans-unit id="button_search">
+				<source>Search!</source>
+			</trans-unit>
+			<trans-unit id="blog.label.title">
+				<source>Blog Title</source>
+			</trans-unit>
+			<trans-unit id="post.label.title">
+				<source>Post Title</source>
+			</trans-unit>
+			<trans-unit id="blog.label.description">
+				<source>Blog Description</source>
+			</trans-unit>
+			<trans-unit id="post.label.content">
+				<source>Post Content</source>
+			</trans-unit>
+			<trans-unit id="post.label.tags">
+				<source>Tags</source>
+			</trans-unit>
+			<trans-unit id="back_to_list">
+				<source>back to list</source>
+			</trans-unit>
+			<trans-unit id="text_delete_confirm_blog">
+				<source>Are you sure you want to delete the blog with the title %1$s?</source>
+			</trans-unit>
+			<trans-unit id="text_delete_confirm_post">
+				<source>Are you sure you want to delete the post with the title %1$s, belonging to blog %2$s?</source>
+			</trans-unit>
+			<trans-unit id="text_max_blogs">
+				<source>Max. %1$s blogs will be listed.</source>
+			</trans-unit>
+			<trans-unit id="arguments">
+				<source>Arguments</source>
+			</trans-unit>
+			<trans-unit id="validator.word.notvalid">
+				<source>Too many words in the value. Max. amount permitted is %1$s.</source>
+			</trans-unit>
+			<trans-unit id="validator.blog.title">
+				<source>The word \'%1$s\' must not be in the title, if you use \'%2$s\' in description.</source>
+			</trans-unit>
+			<trans-unit id="validator.blog.description">
+				<source>The words \'%2$s\' must not be in the description, if the title contains \'%1$s\'.</source>
+			</trans-unit>
+			<trans-unit id="validator.facebook.notvalid">
+				<source>There is a User called like the title with ID %1$s at URL %2$s!</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

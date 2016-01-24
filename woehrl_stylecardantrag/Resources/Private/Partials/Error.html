@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<head>
+    <title>Partials: Error</title>
+</head>
+<body>
+<f:section name="Main">
+    <f:form.validationResults for="{object}">
+        <f:if condition="{validationResults.flattenedErrors}">
+            <div class="alert alert-danger">
+                <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+
+                    <f:if condition="{propertyPath} == 'stylecardantrag.anrede'">
+                        <ul>
+                            <li>
+                                Um Sie persönlich ansprechen zu können, benötigen wir Ihre Anrede.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'stylecardantrag.vorname'">
+                        <ul>
+                            <li>
+                                Um Sie persönlich ansprechen zu können, benötigen wir Ihren Vornamen.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'stylecardantrag.nachname'">
+                        <ul>
+                            <li>
+                                Um Sie persönlich ansprechen zu können, benötigen wir Ihren Nachnamen.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'stylecardantrag.geburtsdatum'">
+                        <ul>
+                            <li>
+                                Teilnahmeberechtigt sind Personen ab 18 Jahren.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'stylecardantrag.email'">
+                        <ul>
+                            <li>
+                                Bitte geben Sie eine gültige E-Mail-Adresse ein.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'stylecardantrag.plz'">
+                        <ul>
+                            <li>
+                                Für Informationen aus dem Haus in Ihrer Nähe, benötigen wir Ihre PLZ.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'stylecardantrag.agb'">
+                        <ul>
+                            <li>
+                                Bitte akzeptieren Sie die AGB
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'stylecardantrag.ort'">
+                        <ul>
+                            <li>
+                                Für Informationen aus dem Haus in Ihrer Nähe, benötigen wir Ihren Wohnort.
+                            </li>
+                        </ul>
+                    </f:if>
+                    <f:if condition="{propertyPath} == 'stylecardantrag.adresse'">
+                        <ul>
+                            <li>
+                                Für Informationen aus dem Haus in Ihrer Nähe, benötigen wir Ihre Adresse.
+                            </li>
+                        </ul>
+                    </f:if>
+
+
+                </f:for>
+            </div>
+        </f:if>
+    </f:form.validationResults>
+</f:section>
+</body>
+</html>

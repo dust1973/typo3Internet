@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-08-24T08:48:12Z" product-name="simpleblog">
+		<header/>
+		<body>
+
+			<trans-unit id="title.description">
+				<source>This is the title of the blog</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>This is the description of the blog</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>Picture of the blog</source>
+			</trans-unit>
+			<trans-unit id="posts.description">
+				<source>The posts of a blog</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

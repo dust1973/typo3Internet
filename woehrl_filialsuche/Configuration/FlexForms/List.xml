@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Optionen</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.filialenKarte>
+                        <TCEforms>
+                            <label>Kartentyp</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">Filialsuche</numIndex>
+                                        <numIndex index="1">0</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">Filialkarte</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                    </numIndex>
+
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.filialenKarte>
+                    <settings.lon_pos>
+                        <TCEforms>
+                            <displayCond>FIELD:settings.filialenKarte:REQ:TRUE</displayCond>
+                            <label>Longitude (lon_pos: z.Bsp. 11.07075)</label>
+                            <config>
+                                <type>input</type>
+                                <size>30</size>
+                                <eval>trim</eval>
+                                <default>11.07075</default>
+                            </config>
+                        </TCEforms>
+                    </settings.lon_pos>
+                    <settings.lat_pos>
+                        <TCEforms>
+                            <displayCond>FIELD:settings.filialenKarte:REQ:TRUE</displayCond>
+
+                            <label>Latitude (lat_pos: z.Bsp. 49.45060)</label>
+                            <config>
+                                <type>input</type>
+                                <size>30</size>
+                                <eval>trim</eval>
+                                <default>49.45060</default>
+                            </config>
+                        </TCEforms>
+                    </settings.lat_pos>
+                    <settings.zoom>
+                        <TCEforms>
+                            <displayCond>FIELD:settings.filialenKarte:REQ:TRUE</displayCond>
+                            <label>Zoom</label>
+                            <config>
+                                <type>input</type>
+                                <size>30</size>
+                                <eval>trim</eval>
+                                <default>18</default>
+                            </config>
+                        </TCEforms>
+                    </settings.zoom>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

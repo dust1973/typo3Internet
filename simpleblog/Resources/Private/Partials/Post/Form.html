@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	  xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<head>
+	<title>Partials: Form</title>
+</head>
+<body>
+<f:section name="Main">
+	<h1><f:translate key="{headline}" /></h1>
+	<f:render partial="Error" section="Main" arguments="{object:post}"/>
+	<f:form action="{action}" object="{post}" name="post" arguments="{blog:blog}"
+			additionalAttributes="{role:'form'}">
+
+		<div class="form-group">
+			<label><f:translate key="post.label.title" /></label>
+			<f:form.textfield property="title" class="form-control"/>
+		</div>
+
+		<div class="form-group">
+			<label><f:translate key="post.label.content" /></label>
+			<f:form.textarea property="content" class="form-control"/>
+		</div>
+
+		<div class="form-group">
+			<label>
+				<f:translate key="post.label.tags"/></label>
+			<f:form.select options="{tags}" optionLabelField="tagvalue"
+			property="tags" size="5" multiple="1" class="form-control" />
+		</div>
+
+		<f:form.submit value="{f:translate(key:submitmessage)}" class="btn btn-primary"/>
+
+	</f:form>
+</f:section>
+</body>
+</html>

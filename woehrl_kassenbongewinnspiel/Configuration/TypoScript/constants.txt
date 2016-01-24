@@ -1,0 +1,15 @@
+
+plugin.tx_woehrlkassenbongewinnspiel {
+	view {
+		# cat=plugin.tx_woehrlkassenbongewinnspiel/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:woehrl_kassenbongewinnspiel/Resources/Private/Templates/
+		# cat=plugin.tx_woehrlkassenbongewinnspiel/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:woehrl_kassenbongewinnspiel/Resources/Private/Partials/
+		# cat=plugin.tx_woehrlkassenbongewinnspiel/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:woehrl_kassenbongewinnspiel/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_woehrlkassenbongewinnspiel//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

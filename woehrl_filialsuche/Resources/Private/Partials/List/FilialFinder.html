@@ -1,0 +1,27 @@
+<!--
+	=====================
+		Partials/List/FilialFinder.html
+-->
+
+	<div id="map" class="olMap" style="height:500px !important;"></div>
+	<h1>WÖHRL Filialsuche</h1>
+	<hr />
+	<div style="padding:10px;">
+		<f:form action="show"  name="filiale" object="{filiales}" class="form-inline">
+			<div class="form-group">
+				<label for="exampleInputPlz">Bitte geben Sie Ihre PLZ ein</label>
+				<f:form.textfield property="plz" type="number" class="form-control plz" id="exampleInputPlz" maxlength="5"/>
+			</div>
+			<div class="form-group">
+				<label>Umkreis</label>
+				<f:form.select property="radius" id="radius" class="form-control"
+							   optionLabelField="radius" options="{25: '25 km', 50: '50 km', 100: '100 km'}"/>
+			</div>
+			<div class="form-group">
+				<f:form.submit value="Filiale suchen" class="btn btn-primary"/>
+			</div>
+		</f:form>
+		<p></p>
+	</div>
+
+

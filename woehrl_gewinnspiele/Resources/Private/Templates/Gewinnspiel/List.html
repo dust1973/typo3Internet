@@ -1,0 +1,49 @@
+
+<f:layout name="Default" />
+
+<f:section name="main">
+    <f:flashMessages renderMode="div" />
+
+    <div  class="tx_woehrlgewinnspiele" >
+        <f:if condition="{gewinnspiels}">
+            <f:then>
+                <f:for each="{gewinnspiels}" as="gewinnspiel">
+                    <div class="well event row" style="margin-left:0; margin-right:0;">
+                        <div class="col-md-4">
+                            <f:link.action action="new" controller="Teilnehmer" arguments="{gewinnspiel : gewinnspiel}">
+                                <f:if condition="{gewinnspiel.vorschaubild}">
+                                    <f:then>
+                                        <f:image width="970" class="img-thumbnail" src="{gewinnspiel.vorschaubild.uid}" alt="" treatIdAsReference="TRUE" />
+                                    </f:then>
+                                    <f:else>
+                                        <f:image class="img-thumbnail" src="{settings.displayList.imageNotFound}" alt="Image not found" />
+                                    </f:else>
+                                </f:if>
+                            </f:link.action>
+                            <p style=""><br />
+                                <small>Teilnahmeschluss ist der:  <b><f:format.date format="d.m.Y">{gewinnspiel.gewinnspieldatetimestop}</f:format.date></b></small></p>
+                        </div>
+                        <div class="col-md-8">
+                            <f:link.action action="new" controller="Teilnehmer" arguments="{gewinnspiel : gewinnspiel}">
+                                <h3 style="margin-top:0;">Gewinnspiel: {gewinnspiel.title}<f:if condition="{gewinnspiel.teasertext}"></f:if></h3>
+                            </f:link.action>
+
+                            <hr />
+                            <f:format.crop maxCharacters="150" append=" …"><f:format.html>{gewinnspiel.teasertext}</f:format.html></f:format.crop>
+                            <hr />
+                            <f:link.action action="new" pageUid="{settings.singlePid}" controller="Teilnehmer" arguments="{gewinnspiel : gewinnspiel}" class="btn btn-primary">
+                                <f:translate id="more" default="Teilnehmen"  /> <span class="glyphicon glyphicon-chevron-right"></span>
+                            </f:link.action>
+                        </div>
+                    </div>
+                </f:for>
+            </f:then>
+            <f:else>
+                <div class="alert alert-info">
+                    <f:translate id="No_events_found" default="Leider wurden für Ihre Auswahl keine Gewinnspiele gefunden." />
+                </div>
+            </f:else>
+        </f:if>
+
+    </div>
+</f:section>

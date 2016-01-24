@@ -1,0 +1,24 @@
+
+<f:layout name="Default" />
+
+<f:section name="main">
+    <f:flashMessages renderMode="div" />
+    <f:render partial="FormErrors" arguments="{object:Teilnehmer, object:Gewinnspiel}" />
+    <style>
+        .popover {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            display: block;
+            max-width: 650px !important;
+            min-width: 400px !important;
+            text-align: left;
+        }
+    </style>
+    <!--f:debug>{_all}</f:debug-->
+    <f:form action="create"  class="well" enctype="multipart/form-data"  name="newTeilnehmer"
+            object="{newTeilnehmer}" arguments="{gewinnspiel : gewinnspiel}">
+        <f:render partial="Teilnehmer/FormFields" arguments="{_all}"/>
+
+    </f:form>
+</f:section>

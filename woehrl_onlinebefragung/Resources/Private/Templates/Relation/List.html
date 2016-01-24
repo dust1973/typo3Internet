@@ -1,0 +1,37 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Relation</h1>
+
+<f:flashMessages renderMode="div" />
+
+<table  class="tx_woehrlonlinebefragung" >
+	<tr>
+		<th><f:translate key="tx_woehrlonlinebefragung_domain_model_relation.userid" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{relations}" as="relation">
+		<tr>
+			<td><f:link.action action="show" arguments="{relation : relation}"> {relation.userid}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{relation : relation}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{relation : relation}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Relation</f:link.action>
+</f:section>

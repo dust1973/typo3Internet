@@ -1,0 +1,31 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Optionen</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.category>
+                        <TCEforms>
+                            <label>Bitte Category auswählen</label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0"></numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                                <foreign_table>tx_woehrlonlinebefragung_domain_model_category</foreign_table>
+                                <foreign_table_where> ORDER BY tx_woehrlonlinebefragung_domain_model_category.title </foreign_table_where>
+                            </config>
+                        </TCEforms>
+                    </settings.category>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>
+

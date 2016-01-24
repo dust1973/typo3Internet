@@ -1,0 +1,13 @@
+
+ # Module configuration
+module.tx_umfrage {
+	persistence {
+		storagePid = {$module.tx_umfrage.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_umfrage.view.templateRootPath}
+		partialRootPath = {$module.tx_umfrage.view.partialRootPath}
+		layoutRootPath = {$module.tx_umfrage.view.layoutRootPath}
+	}
+}
+

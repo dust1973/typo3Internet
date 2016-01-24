@@ -1,0 +1,49 @@
+
+plugin.tx_woehrlmarkenverwaltung {
+	view {
+		templateRootPath = {$plugin.tx_woehrlmarkenverwaltung.view.templateRootPath}
+		partialRootPath = {$plugin.tx_woehrlmarkenverwaltung.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_woehrlmarkenverwaltung.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_woehrlmarkenverwaltung.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_woehrlmarkenverwaltung._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-woehrl-markenverwaltung table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-woehrl-markenverwaltung table th {
+		font-weight:bold;
+	}
+
+	.tx-woehrl-markenverwaltung table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)

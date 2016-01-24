@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-02-26T19:19:09Z" product-name="woehrl_gewinnspiele">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="subtitle.description">
+				<source>subtitle</source>
+			</trans-unit>
+			<trans-unit id="gewinnspieldatetimestart.description">
+				<source>gewinnspieldatetimestart</source>
+			</trans-unit>
+			<trans-unit id="gewinnspieldatetimestop.description">
+				<source>gewinnspieldatetimestop</source>
+			</trans-unit>
+			<trans-unit id="teasertext.description">
+				<source>teasertext</source>
+			</trans-unit>
+			<trans-unit id="teilnahmebedingungen.description">
+				<source>teilnahmebedingungen</source>
+			</trans-unit>
+			<trans-unit id="vorschaubild.description">
+				<source>vorschaubild</source>
+			</trans-unit>
+			<trans-unit id="titlebild.description">
+				<source>titlebild</source>
+			</trans-unit>
+			<trans-unit id="kassenbonn.description">
+				<source>kassenbonn</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

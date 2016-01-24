@@ -1,0 +1,113 @@
+<f:form.validationResults for="{object}">
+    <f:if condition="{validationResults.flattenedErrors}">
+        <div class="alert alert-danger">
+            <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+               <!--{errors.0}-->
+
+                <!--{propertyPath}-->
+                <f:if condition="{propertyPath} == 'newTeilnehmer.filiale'">
+                    <ul>
+                        <li>
+                            Bitte geben Sie die Filialnummer an.
+                        </li>
+                    </ul>
+                </f:if>
+                <f:if condition="{propertyPath} == 'newTeilnehmer.kasse'">
+                    <ul>
+                        <li>
+                            Bitte geben Sie die Kassennummer an.
+                        </li>
+                    </ul>
+                </f:if>
+                <f:if condition="{propertyPath} == 'newTeilnehmer.bon'">
+                    <ul>
+                        <li>
+                            Bitte geben Sie Ihre Bonnummer an.
+                        </li>
+                    </ul>
+                </f:if>
+                <f:if condition="{propertyPath} == 'newTeilnehmer.bondatum'">
+                    <ul>
+                        <li>
+                            Bitte geben Sie Ihre Bon-Datum an.
+                        </li>
+                    </ul>
+                </f:if>
+                <f:if condition="{propertyPath} == 'newTeilnehmer.gender'">
+                    <ul>
+                        <li>
+                            Bitte wählen Sie Ihre Anrede aus.
+                        </li>
+                    </ul>
+                </f:if>
+                <f:if condition="{propertyPath} == 'newTeilnehmer.firstname'">
+                    <ul>
+                        <li>
+                            Bitte geben Sie Ihren Vornamen an.
+                        </li>
+                    </ul>
+                </f:if>
+                <f:if condition="{propertyPath} == 'newTeilnehmer.lastname'">
+                    <ul>
+                        <li>
+                            Bitte geben Sie Ihren Nachnamen an.
+                        </li>
+                    </ul>
+                </f:if>
+                <f:if condition="{propertyPath} == 'newTeilnehmer.email'">
+                    <f:if condition="{errors.0.code} == 1806198601">
+                        <f:then>
+                        <ul>
+
+                            <li>
+                                {errors.0.message}
+                            </li>
+                        </ul>
+                        </f:then>
+                        <f:else>
+                            <ul>
+                                <li>
+                                    Bitte geben Sie eine gültige E-Mail-Adresse ein.
+                                </li>
+                            </ul>
+
+                        </f:else>
+                    </f:if>
+
+
+                </f:if>
+                <f:if condition="{propertyPath} == 'newTeilnehmer.zip'">
+                    <ul>
+                        <li>
+                            Bitte geben Sie Ihre PLZ an.
+                        </li>
+                    </ul>
+                </f:if>
+                <f:if condition="{propertyPath} == 'stylecardantrag.agb'">
+                    <ul>
+                        <li>
+                            Bitte akzeptieren Sie die AGB
+                        </li>
+                    </ul>
+                </f:if>
+                <f:if condition="{propertyPath} == 'newTeilnehmer.city'">
+                    <ul>
+                        <li>
+                            Bitte geben Sie Ihren Wohnort an.
+                        </li>
+                    </ul>
+                </f:if>
+                <f:if condition="{propertyPath} == 'newTeilnehmer.address'">
+                    <ul>
+                        <li>
+                            Bitte geben Sie Ihre Strasse und Hausnummer an.
+                        </li>
+                    </ul>
+                </f:if>
+
+
+            </f:for>
+        </div>
+    </f:if>
+</f:form.validationResults>
+

@@ -1,0 +1,69 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Teilnehmer</h1>
+
+<f:flashMessages renderMode="div" />
+
+<table  class="tx_woehrlgewinnspiele" >
+	<tr>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.gender" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.firstname" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.lastname" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.title" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.email" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.phone" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.mobile" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.zip" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.city" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.address" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.description" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.werbung" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.country" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.filiale" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.kasse" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.bon" /></th>
+		<th><f:translate key="tx_woehrlgewinnspiele_domain_model_teilnehmer.bondatum" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{teilnehmers}" as="teilnehmer">
+		<tr>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.gender}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.firstname}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.lastname}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.email}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.phone}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.mobile}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.zip}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.city}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.address}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.description}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.werbung}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.country}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.filiale}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.kasse}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.bon}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.bondatum -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{teilnehmer : teilnehmer}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{teilnehmer : teilnehmer}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Teilnehmer</f:link.action>
+</f:section>

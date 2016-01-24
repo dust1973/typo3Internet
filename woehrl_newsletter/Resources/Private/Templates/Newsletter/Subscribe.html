@@ -1,0 +1,41 @@
+
+<f:switch expression="{content}">
+    <f:case value="2">
+
+<h3>Herzlich willkommen beim WÖHRL Newsletter!</h3>
+        <p>Sie erhalten ab sofort die neuesten Informationen über</p>
+        <ul><li>neue Modetrends,</li><li>tolle Events,</li><li>attraktive Angebote und Aktionen,</li><li>und vieles mehr.</li></ul>
+        <h3>Der 5€-Einkaufsgutschein, als Dankeschön für Ihre Anmeldung zum WÖHRL Newsletter, wird Ihnen in Kürze per E-Mail zugeschickt.</h3>
+<p>Herzlichst Ihr<br /><br />
+    WÖHRL Kundenservice<br />
+    Rudolf Wöhrl AG<br />
+    Tel.: 0911 - 8121111*<br />
+    E-Mail: stylecard@woehrl.de<br /><br />
+    <small>*Verbindungspreis entspricht Preis aus dem deutschen Festnetz. Mobilfunkpreis ggf. abweichend.</small>
+</p>
+    </f:case>
+    <f:case value="3">
+        <div class="alert alert-danger" role="alert">
+            Ein Fehler ist aufgetreten, versuchen sie es später noch einmal!
+        </div>
+    </f:case>
+    <f:case value="4">
+        <div class="alert alert-danger" role="alert">
+            Es ist bereits ein Benutzer mit der angegebenen E-Mail-Adresse angemeldet!
+        </div>
+    </f:case>
+
+    <f:case value="5">
+        <div class="alert alert-danger" role="alert">
+            Fehler: Ein Fehler ist aufgetreten, versuchen sie es später noch einmal!
+        </div>
+    </f:case>
+
+    <f:case value="6">
+        <div class="alert alert-danger" role="alert">
+            Der Dienst zur zeit nicht Verfügbar, versuchen Sie es später noch einmal!
+        </div>
+    </f:case>
+
+    </f:switch>
+

@@ -1,0 +1,27 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:layout name="Default"/>
+	<title>Templates: List</title>
+	<f:section name="main">
+		<h1><f:translate key="heading_bloglist" /> </h1>
+		<f:form action="list" additionalAttributes="{role : 'form'}">
+			<div class="form-inline">
+				<div class="form-group">
+					<f:form.textfield name="search" value="{search}" class="form-control" />
+					<f:form.submit value="{f:translate(key:'button_search')}" class="btn-xs btn-primary" />
+				</div>
+			</div>
+		</f:form>
+		<ul class="list-group">
+			<f:for each="{blogs}" as="blog">
+				<li class="list-group-item">{blog.title}
+					<f:link.action action="show" arguments="{blog : blog}" class="btn btn-primary btn-xs pull-right"><f:translate key="button_blog_show" /> </f:link.action>
+					<f:link.action action="updateForm" arguments="{blog : blog}" class="btn btn-primary btn-xs pull-right margin-right"><f:translate key="button_blog_update" /> </f:link.action>
+					<f:link.action action="deleteConfirm" arguments="{blog : blog}" class="btn btn-primary btn-xs pull-right margin-right"><f:translate key="button_blog_delete" /> </f:link.action>
+				</li>
+			</f:for>
+		</ul>
+		<p class="text-muted"><f:translate key="text_max_blogs" arguments="{1:settings.blog.max}" /></p>
+		<f:link.action action="addForm" class="btn btn-primary"><f:translate key="button_new_blog" /> </f:link.action>
+	</f:section>
+</div>
